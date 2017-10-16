@@ -2,9 +2,8 @@ package com.scobmyster.copperorange.client.widgets;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.*;
+import com.scobmyster.copperorange.client.ScreenModel;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
 
 public class OrangeFlexTable extends FlexTable
@@ -23,56 +22,29 @@ public class OrangeFlexTable extends FlexTable
     {
         this.screenModel = screenModel;
     }
-    public ScreenModelImpl getScreenModel()
+    public ScreenModel getScreenModel()
     {
         return screenModel;
     }
 
-    public void setupRota(int rowCount, int colCount)
+    public void setup(int col, int row)
     {
-        this.setWidth("32em");
-        this.setCellSpacing(5);
-        this.setCellPadding(3);
+        for(int c = 0; c < col; c++)
+        {
+            for(int r = 0; r < row; r++)
+            {
 
-        //Add some text
-        cellFormatter.setHorizontalAlignment(0, 1, HasHorizontalAlignment.ALIGN_LEFT);
-        this.setHTML(0, 0, "someTexts");
-        cellFormatter.setColSpan(0, 0, 2);
+                this.setWidget(c, r, new OrangeTextbox("ID: " + c + r));
 
-        //Add a button that will add rows
-        OrangeButton addRowButton = new OrangeButton("addRowButton");
-        addRowButton.setText("Add row");
-        addRowButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                addRow();
+                cellFormatter.setColSpan(c, r, 400);
             }
-        });
+            this.getCellFormatter().addStyleName(c, 0, "tablecolumn");
+        }
 
-        //Add a button that will remove rows
-        OrangeButton removeRowButton = new OrangeButton("removeRowButton");
-        removeRowButton.setText("Remove row");
-        removeRowButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                removeRow();
-            }
-        });
-
-        VerticalPanel buttonPanel = new VerticalPanel();
-        buttonPanel.add(addRowButton);
-
+        this.addStyleName("table");
+        this.getRowFormatter().addStyleName(0, "tableheader");
     }
 
 
-    private void addRow()
-    {
-
-    }
-
-    private void removeRow()
-    {
-
-    }
 
 }

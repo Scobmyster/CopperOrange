@@ -12,6 +12,7 @@ public class OrangeButton extends Button
     public OrangeButton(String componentID)
     {
         this.componentID = componentID;
+        this.addStyleName("customButton");
     }
 
     public void setScreenModel(ScreenModelImpl screenModel)

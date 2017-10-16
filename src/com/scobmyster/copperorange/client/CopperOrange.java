@@ -28,6 +28,6 @@ public class CopperOrange implements EntryPoint {
    */
   public void onModuleLoad()
   {
-    new PluggerImpl().setup(RootPanel.get());
+    new PluggerImpl().setup(RootPanel.get("copperorange"));
   }
 }
