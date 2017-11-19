@@ -4,7 +4,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.scobmyster.copperorange.logging.LogManager;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.process.client.RotaAddRowImpl;
 import com.scobmyster.copperorange.client.process.client.RotaRemoveRowImpl;

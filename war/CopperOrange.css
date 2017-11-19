@@ -51,6 +51,6 @@ h1 {
 }
 
 .customButton {
-    background-color: #55e875;
+    background: #55e875 !important;
     color: white;
 }
