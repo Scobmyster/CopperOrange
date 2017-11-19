@@ -1,7 +1,6 @@
 package com.scobmyster.copperorange.client.widgets;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.scobmyster.copperorange.client.ScreenModel;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
@@ -12,6 +11,9 @@ public class OrangeFlexTable extends FlexTable
     private String componentID;
     private ScreenModelImpl screenModel;
     private FlexCellFormatter cellFormatter = this.getFlexCellFormatter();
+    private int tableRowCount = 0;
+    private int columnCount = 0;
+
 
     public OrangeFlexTable(String componentID)
     {
@@ -27,24 +29,34 @@ public class OrangeFlexTable extends FlexTable
         return screenModel;
     }
 
-    public void setup(int col, int row)
+
+    public void addToRowCount()
     {
-        for(int c = 0; c < col; c++)
-        {
-            for(int r = 0; r < row; r++)
-            {
+        tableRowCount++;
+    }
 
-                this.setWidget(c, r, new OrangeTextbox("ID: " + c + r));
+    public void removeFromRowCount()
+    {
+        tableRowCount--;
+    }
 
-                cellFormatter.setColSpan(c, r, 400);
-            }
-            this.getCellFormatter().addStyleName(c, 0, "tablecolumn");
-        }
-
-        this.addStyleName("table");
-        this.getRowFormatter().addStyleName(0, "tableheader");
+    public void setTableRowCount(int tableRowCount)
+    {
+        this.tableRowCount = (tableRowCount - 1);
     }
 
 
+    public int getRowCountForTable()
+    {
+        return this.tableRowCount;
+    }
 
+    public int getColumnCount() {
+        return columnCount;
+    }
+
+    public void setColumnCount(int columnCount)
+    {
+        this.columnCount = columnCount;
+    }
 }
