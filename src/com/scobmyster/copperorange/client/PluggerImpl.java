@@ -6,6 +6,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.process.client.RotaAddRowImpl;
+import com.scobmyster.copperorange.client.process.client.RotaNewImpl;
 import com.scobmyster.copperorange.client.process.client.RotaRemoveRowImpl;
 import com.scobmyster.copperorange.client.widgets.OrangeButton;
 import com.scobmyster.copperorange.client.widgets.OrangeFlexTable;
@@ -18,45 +19,47 @@ public class PluggerImpl
     private static ScreenModelImpl screenModel = new ScreenModelImpl();
     private static ClientSideHandler handler = new ClientSideHandler();
     private TableBuilder tableBuilder = new TableBuilder();
+    private OrangeFlexTable rotaTable = new OrangeFlexTable("rotaTable");
 
 
     public void setup(RootPanel root)
     {
-
-
-        OrangeFlexTable rotaTable = new OrangeFlexTable("rotaTable");
         rotaTable.setScreenModel(screenModel);
         rotaTable = tableBuilder.createTable(5, 4);
+        rotaTable.setDefColCount(rotaTable.getColumnCount());
+        rotaTable.setDefRowCount(rotaTable.getRowCount());
         screenModel.setRotaTable(rotaTable);
 
-        final OrangeButton addRow = new OrangeButton("addRow");
-        addRow.setText("Add Row");
-        addRow.setEventID(this.getClass().getName() + "." + addRow.getComponentID());
-        addRow.addClickHandler(new ClickHandler() {
+        final OrangeButton addRowButton = new OrangeButton("addRow");
+        addRowButton.setText("Add Row");
+        addRowButton.setEventID(this.getClass().getName() + "." + addRowButton.getComponentID());
+        addRowButton.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent)
             {
-                handler.handleEvent(addRow.getEventID());
+                handler.handleEvent(addRowButton.getEventID());
             }});
 
-        final OrangeButton removeRow = new OrangeButton("removeRow");
-        removeRow.setText("Remove Row");
-        removeRow.setEventID(this.getClass().getName() + "." + removeRow.getComponentID());
-        removeRow.addClickHandler(new ClickHandler() {
+        final OrangeButton removeRowButton = new OrangeButton("removeRow");
+        removeRowButton.setText("Remove Row");
+        removeRowButton.setEventID(this.getClass().getName() + "." + removeRowButton.getComponentID());
+        removeRowButton.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(removeRow.getEventID());
+                handler.handleEvent(removeRowButton.getEventID());
             }
         });
 
-        OrangeButton pushMe = new OrangeButton("pushMe");
-        pushMe.setText("Push Me");
 
-        pushMe.addClickHandler(new ClickHandler() {
+        final OrangeButton newButton = new OrangeButton("new");
+        newButton.setText("New");
+        newButton.setEventID(this.getClass().getName() + "." + newButton.getComponentID());
+        newButton.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent) {
-                Window.alert("It's ya birthday!!!");
-            }});
+                handler.handleEvent(newButton.getEventID());
+            }
+        });
 
         RotaAddRowImpl rotaAddRow = new RotaAddRowImpl();
         rotaAddRow.setScreenModel(screenModel);
@@ -64,17 +67,28 @@ public class PluggerImpl
         RotaRemoveRowImpl rotaRemoveRow = new RotaRemoveRowImpl();
         rotaRemoveRow.setScreenModel(screenModel);
 
+        RotaNewImpl rotaNew = new RotaNewImpl();
+        rotaNew.setScreenModel(screenModel);
+
+
+
         HashMap<String, ProcessModel> mapOfProcesses = new HashMap<>();
 
-        mapOfProcesses.put(addRow.getEventID(), (ProcessModel) rotaAddRow);
-        mapOfProcesses.put(removeRow.getEventID(), (ProcessModel) rotaRemoveRow);
+        mapOfProcesses.put(addRowButton.getEventID(), (ProcessModel) rotaAddRow);
+        mapOfProcesses.put(removeRowButton.getEventID(), (ProcessModel) rotaRemoveRow);
+        mapOfProcesses.put(newButton.getEventID(), (ProcessModel) rotaNew);
 
 
         handler.setMapOfProcesses(mapOfProcesses);
-        root.add(pushMe);
         root.add(rotaTable);
-        root.add(addRow);
-        root.add(removeRow);
+        root.add(addRowButton);
+        root.add(removeRowButton);
+        root.add(newButton);
+    }
+
+    public void setRotaTable(OrangeFlexTable rotaTable)
+    {
+        this.rotaTable = rotaTable;
     }
 
 }

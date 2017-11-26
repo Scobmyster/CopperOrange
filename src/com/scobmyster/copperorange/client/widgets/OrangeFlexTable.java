@@ -5,6 +5,9 @@ import com.google.gwt.user.client.ui.*;
 import com.scobmyster.copperorange.client.ScreenModel;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrangeFlexTable extends FlexTable
 {
 
@@ -13,6 +16,10 @@ public class OrangeFlexTable extends FlexTable
     private FlexCellFormatter cellFormatter = this.getFlexCellFormatter();
     private int tableRowCount = 0;
     private int columnCount = 0;
+    private int defColCount;
+    private int defRowCount;
+    private List<OrangeTableCell> cellList = new ArrayList();
+
 
 
     public OrangeFlexTable(String componentID)
@@ -45,6 +52,11 @@ public class OrangeFlexTable extends FlexTable
         this.tableRowCount = (tableRowCount - 1);
     }
 
+    public List<OrangeTableCell> getCellList()
+    {
+        return cellList;
+    }
+
 
     public int getRowCountForTable()
     {
@@ -58,5 +70,29 @@ public class OrangeFlexTable extends FlexTable
     public void setColumnCount(int columnCount)
     {
         this.columnCount = columnCount;
+    }
+
+    public String getComponentID() {
+        return componentID;
+    }
+
+    public void setComponentID(String componentID) {
+        this.componentID = componentID;
+    }
+
+    public int getDefColCount() {
+        return defColCount;
+    }
+
+    public void setDefColCount(int defColCount) {
+        this.defColCount = defColCount;
+    }
+
+    public int getDefRowCount() {
+        return defRowCount;
+    }
+
+    public void setDefRowCount(int defRowCount) {
+        this.defRowCount = defRowCount;
     }
 }
