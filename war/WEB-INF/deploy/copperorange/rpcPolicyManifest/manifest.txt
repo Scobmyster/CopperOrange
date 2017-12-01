@@ -1,2 +1,3 @@
 # Module copperorange
 # RPC service class, partial path of RPC policy file
+com.scobmyster.copperorange.client.OrangeService, D768C818FEA56D90C086BAC8C37FA11F.gwt.rpc

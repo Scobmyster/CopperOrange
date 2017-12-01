@@ -12,7 +12,7 @@ public class OrangeTextbox extends TextBox
     public OrangeTextbox(String componentID)
     {
         this.componentID = componentID;
-        this.setText("---------");
+
     }
 
 }

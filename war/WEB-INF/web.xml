@@ -7,13 +7,13 @@
 
   <!-- Servlets -->
   <servlet>
-    <servlet-name>orangeServlet</servlet-name>
+    <servlet-name>orangeServiceImpl</servlet-name>
     <servlet-class>com.scobmyster.copperorange.server.OrangeServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>orangeServlet</servlet-name>
-    <url-pattern>/copperorange/greet</url-pattern>
+    <servlet-name>orangeServiceImpl</servlet-name>
+    <url-pattern>/copperorange/call</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->
