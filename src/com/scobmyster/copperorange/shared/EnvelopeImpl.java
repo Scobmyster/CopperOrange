@@ -8,6 +8,7 @@ public class EnvelopeImpl implements Envelope, Serializable
     private Rota rotaModel = new Rota();
     private String address = "";
     private String fileSaveName = "";
+    private String rotaLoadName = "";
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -41,4 +42,16 @@ public class EnvelopeImpl implements Envelope, Serializable
     public void setFileSaveName(String fileSaveName) {
         this.fileSaveName = fileSaveName;
     }
+
+    @Override
+    public String getRotaLoadName() {
+        return rotaLoadName;
+    }
+
+    @Override
+    public void setRotaLoadName(String rotaLoadName) {
+        this.rotaLoadName = rotaLoadName;
+    }
+
+
 }

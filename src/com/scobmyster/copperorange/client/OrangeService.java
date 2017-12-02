@@ -11,5 +11,6 @@ import com.scobmyster.copperorange.shared.Envelope;
 @RemoteServiceRelativePath("call")
 public interface OrangeService extends RemoteService
 {
-  Envelope saveRota(Envelope envelope) throws IllegalArgumentException;
+    Envelope saveRota(Envelope envelope) throws IllegalArgumentException;
+    Envelope loadRota(Envelope envelope) throws IllegalArgumentException;
 }

@@ -29,7 +29,6 @@ public class CopperOrange implements EntryPoint {
    */
   public void onModuleLoad()
   {
-    Window.alert("Loading Module");
     new PluggerImpl().setup(RootPanel.get("copperorange"));
   }
 }

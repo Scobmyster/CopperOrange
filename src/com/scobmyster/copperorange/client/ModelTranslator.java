@@ -1,5 +1,6 @@
 package com.scobmyster.copperorange.client;
 
+import com.google.gwt.user.client.Window;
 import com.scobmyster.copperorange.client.widgets.OrangeFlexTable;
 import com.scobmyster.copperorange.client.widgets.OrangeTableCell;
 import com.scobmyster.copperorange.shared.Rota;
@@ -14,36 +15,34 @@ public class ModelTranslator
     {
         OrangeFlexTable table = screenModel.getRotaTable();
         List<String> text = new ArrayList<>();
-        List<Integer> rowpos = new ArrayList<>();
-        List<Integer> colpos = new ArrayList<>();
+        int[] rowpos = new int[table.getCellList().size()];
+        int[] colpos = new int[table.getCellList().size()];
+        int counter = 0;
         for(OrangeTableCell cell : table.getCellList())
         {
             text.add(cell.getText());
-            rowpos.add(cell.getRow());
-            colpos.add(cell.getCol());
+            Window.alert("Details for cell: " + cell.getText() + " Row: " + cell.getRow() + "Col: " + cell.getCol());
+            rowpos[counter] = cell.getRow();
+            colpos[counter] = cell.getCol();
+            counter++;
         }
         rota.setCellText(text.toArray(new String[0]));
-        int[] rotaRowPos = new int[table.getCellList().size()];
-        int counter = 0;
-        for(Integer i : rowpos)
-        {
-            rotaRowPos[counter] = i;
-            counter++;
-        }
-        rota.setRowpos(rotaRowPos);
-        int[] rotaColPos = new int[table.getCellList().size()];
-        int iterator = 0;
-        for(Integer i : colpos)
-        {
-            rotaColPos[iterator] = i;
-            counter++;
-        }
-        rota.setColpos(rotaColPos);
+        rota.setRowpos(rowpos);
+        rota.setColpos(colpos);
         return rota;
     }
 
     public ScreenModelImpl translate(Rota rota, ScreenModelImpl screenModel)
     {
+        int counter = 0;
+        for(String text : rota.getCellText())
+        {
+            OrangeTableCell tCell = new OrangeTableCell("cell", rota.getRowpos()[counter], rota.getColpos()[counter]);
+            tCell.setText(text);
+            screenModel.getRotaTable().setWidget(rota.getRowpos()[counter], rota.getColpos()[counter], tCell);
+            counter++;
+        }
+        Window.alert("Hit the translate back to the screen bit I think we will have a problem with");
         return screenModel;
     }
 

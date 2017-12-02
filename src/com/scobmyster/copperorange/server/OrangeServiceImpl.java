@@ -23,4 +23,11 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
         new Saver().save(envelope);
         return envelope;
     }
+
+    @Override
+    public Envelope loadRota(Envelope envelope) throws IllegalArgumentException
+    {
+        new Loader().load(envelope);
+        return envelope;
+    }
 }

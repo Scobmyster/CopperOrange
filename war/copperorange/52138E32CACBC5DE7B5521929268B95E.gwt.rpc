@@ -3,7 +3,7 @@ com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true, true, t
 com.google.gwt.user.client.rpc.RpcTokenException, true, true, false, false, com.google.gwt.user.client.rpc.RpcTokenException/2345075298, 2345075298
 com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.gwt.user.client.rpc.XsrfToken/4254043109, 4254043109
 com.scobmyster.copperorange.client.OrangeService, false, false, false, false, _, 2181454883
-com.scobmyster.copperorange.shared.EnvelopeImpl, true, true, true, true, com.scobmyster.copperorange.shared.EnvelopeImpl/1960429372, 1960429372
+com.scobmyster.copperorange.shared.EnvelopeImpl, true, true, true, true, com.scobmyster.copperorange.shared.EnvelopeImpl/2623446595, 2623446595
 com.scobmyster.copperorange.shared.Rota, true, true, true, true, com.scobmyster.copperorange.shared.Rota/3623674621, 3623674621
 [I, true, true, true, true, [I/2970817851, 2970817851
 java.lang.Exception, true, false, true, false, java.lang.Exception/1920171873, 1920171873

@@ -12,6 +12,8 @@ public class ScreenModelImpl implements ScreenModel
     OrangeFlexTable rotaTable;
     OrangeTextbox saveNameBox;
     OrangePopupPanel savePop;
+    OrangePopupPanel loadPop;
+    OrangeTextbox loadNameBox;
 
     /*
         -------Getters & Setters--------
@@ -40,5 +42,21 @@ public class ScreenModelImpl implements ScreenModel
 
     public void setSavePop(OrangePopupPanel savePop) {
         this.savePop = savePop;
+    }
+
+    public OrangePopupPanel getLoadPop() {
+        return loadPop;
+    }
+
+    public void setLoadPop(OrangePopupPanel loadPop) {
+        this.loadPop = loadPop;
+    }
+
+    public OrangeTextbox getLoadNameBox() {
+        return loadNameBox;
+    }
+
+    public void setLoadNameBox(OrangeTextbox loadNameBox) {
+        this.loadNameBox = loadNameBox;
     }
 }

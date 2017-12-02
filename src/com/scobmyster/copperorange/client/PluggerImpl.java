@@ -4,15 +4,10 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PopupPanel;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.*;
 import com.scobmyster.copperorange.client.process.ProcessModel;
-import com.scobmyster.copperorange.client.process.client.RotaAddRowImpl;
-import com.scobmyster.copperorange.client.process.client.RotaGetSaveName;
-import com.scobmyster.copperorange.client.process.client.RotaNewImpl;
-import com.scobmyster.copperorange.client.process.client.RotaRemoveRowImpl;
+import com.scobmyster.copperorange.client.process.client.*;
+import com.scobmyster.copperorange.client.process.server.RotaLoadImpl;
 import com.scobmyster.copperorange.client.process.server.RotaSaveImpl;
 import com.scobmyster.copperorange.client.widgets.OrangeButton;
 import com.scobmyster.copperorange.client.widgets.OrangeFlexTable;
@@ -32,7 +27,6 @@ public class PluggerImpl
 
     public void setup(RootPanel root)
     {
-        Window.alert("PluggerImpl.Setup: Starting");
         rotaTable.setScreenModel(screenModel);
         rotaTable = tableBuilder.createTable(5, 4);
         rotaTable.setDefColCount(rotaTable.getColumnCount());
@@ -80,8 +74,17 @@ public class PluggerImpl
             }
         });
 
-        //Popup Panel for name rota will be saved under
-        Window.alert("PluggerImpl.Setup: Setting up popup panel widgets");
+        final OrangeButton loadButton = new OrangeButton("load");
+        loadButton.setText("Load");
+        loadButton.setEventID(this.getClass().getName() + "." + loadButton.getComponentID());
+        loadButton.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent clickEvent) {
+                handler.handleEvent(loadButton.getEventID());
+            }
+        });
+
+        //Save popup
         Label saveLabel = new Label();
         saveLabel.setText("Enter name for rota: ");
 
@@ -98,16 +101,72 @@ public class PluggerImpl
             }
         });
 
+        final OrangeButton saveCancelButton = new OrangeButton("saveCancelButton");
+        saveCancelButton.setText("Cancel");
+        saveCancelButton.setEventID(this.getClass().getName() + "." + saveCancelButton.getComponentID());
+        saveCancelButton.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent clickEvent) {
+                handler.handleEvent(saveCancelButton.getEventID());
+            }
+;        });
+
         VerticalPanel savePopVP = new VerticalPanel();
+        HorizontalPanel savePopHP = new HorizontalPanel();
         savePopVP.add(saveLabel);
         savePopVP.add(saveNameBox);
-        savePopVP.add(saveNameButton);
+        savePopVP.add(savePopHP);
+        savePopHP.add(saveNameButton);
+        savePopHP.add(saveCancelButton);
 
-        OrangePopupPanel savePop = new OrangePopupPanel("savePop");
+        OrangePopupPanel savePop = new OrangePopupPanel("loadPop");
         savePop.setVisible(false);
-       savePop.setSize("128",  "128");
+        savePop.setSize("128",  "128");
         savePop.add(savePopVP);
         screenModel.setSavePop(savePop);
+        //----------------------------------------------------------------------------
+
+        //Load popup
+        Label loadLabel = new Label();
+        saveLabel.setText("Enter name for rota to load: ");
+
+        OrangeTextbox loadNameBox = new OrangeTextbox("loadNameBox");
+        screenModel.setLoadNameBox(loadNameBox);
+
+        final OrangeButton loadNameButton = new OrangeButton("loadNameButton");
+        loadNameButton.setText("Load Rota");
+        loadNameButton.setEventID(this.getClass().getName() + "." + loadNameButton.getComponentID());
+        loadNameButton.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent clickEvent) {
+                handler.handleEvent(loadNameButton.getEventID());
+            }
+        });
+
+        final OrangeButton loadCancelButton = new OrangeButton("loadCancelButton");
+        loadCancelButton.setText("Cancel");
+        loadCancelButton.setEventID(this.getClass().getName() + "." + loadCancelButton.getComponentID());
+        loadCancelButton.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent clickEvent) {
+                handler.handleEvent(loadCancelButton.getEventID());
+            }
+
+        });
+
+        VerticalPanel loadPopVP = new VerticalPanel();
+        HorizontalPanel loadPopHP = new HorizontalPanel();
+        loadPopVP.add(loadLabel);
+        loadPopVP.add(loadNameBox);
+        loadPopVP.add(loadPopHP);
+        loadPopHP.add(loadNameButton);
+        loadPopHP.add(loadCancelButton);
+
+        OrangePopupPanel loadPop = new OrangePopupPanel("loadPop");
+        loadPop.setVisible(false);
+        loadPop.setSize("128",  "128");
+        loadPop.add(loadPopVP);
+        screenModel.setLoadPop(loadPop);
 
 
         //CLIENT EVENT STUFF
@@ -122,14 +181,25 @@ public class PluggerImpl
 
         RotaGetSaveName rotaSaveName = new RotaGetSaveName();
         rotaSaveName.setScreenmodel(screenModel);
-        Window.alert("PluggerImpl.Setup: Setting client stuff");
+
+        RotaCancelSaveRotaImpl rotaCancelSaveRota = new RotaCancelSaveRotaImpl();
+        rotaCancelSaveRota.setScreenModel(screenModel);
+
+        RotaCancelLoadRotaImpl rotaCancelLoadRota = new RotaCancelLoadRotaImpl();
+        rotaCancelLoadRota.setScreenModel(screenModel);
+
+        RotaGetLoadName rotaLoadName = new RotaGetLoadName();
+        rotaLoadName.setScreenModel(screenModel);
         //-------------------------------
 
         //SERVER EVENT STUFF
         RotaSaveImpl rotaSave = new RotaSaveImpl();
         rotaSave.setScreenModel(screenModel);
         rotaSave.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
-        Window.alert("PluggerImpl.Setup: Setting server stuff");
+
+        RotaLoadImpl rotaLoad = new RotaLoadImpl();
+        rotaLoad.setScreenModel(screenModel);
+        rotaLoad.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
         //-------------------------------
 
         HashMap<String, ProcessModel> mapOfProcesses = new HashMap<>();
@@ -139,6 +209,11 @@ public class PluggerImpl
         mapOfProcesses.put(newButton.getEventID(), (ProcessModel) rotaNew);
         mapOfProcesses.put(saveButton.getEventID(), (ProcessModel) rotaSaveName);
         mapOfProcesses.put(saveNameButton.getEventID(), (ProcessModel) rotaSave);
+        mapOfProcesses.put(saveCancelButton.getEventID(), (ProcessModel) rotaCancelSaveRota);
+        mapOfProcesses.put(loadButton.getEventID(), (ProcessModel) rotaLoadName);
+        mapOfProcesses.put(loadNameButton.getEventID(), (ProcessModel) rotaLoad);
+        mapOfProcesses.put(loadCancelButton.getEventID(), (ProcessModel) rotaCancelLoadRota);
+
 
 
         handler.setMapOfProcesses(mapOfProcesses);
@@ -147,7 +222,7 @@ public class PluggerImpl
         root.add(removeRowButton);
         root.add(newButton);
         root.add(saveButton);
-        //root.add(savePop);
+        root.add(loadButton);
         Window.alert("PluggerImpl.Setup: Done");
     }
 

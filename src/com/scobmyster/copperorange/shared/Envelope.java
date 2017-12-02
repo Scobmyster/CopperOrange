@@ -9,5 +9,7 @@ public interface Envelope
     String getAddress();
     String getFileSaveName();
     void setFileSaveName(String fileSaveName);
+    String getRotaLoadName();
+    void setRotaLoadName(String rotaLoadName);
 
 }
