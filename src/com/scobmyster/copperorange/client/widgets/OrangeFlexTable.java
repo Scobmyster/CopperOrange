@@ -49,7 +49,7 @@ public class OrangeFlexTable extends FlexTable
 
     public void setTableRowCount(int tableRowCount)
     {
-        this.tableRowCount = (tableRowCount - 1);
+        this.tableRowCount = tableRowCount;
     }
 
     public List<OrangeTableCell> getCellList()
@@ -58,7 +58,7 @@ public class OrangeFlexTable extends FlexTable
     }
 
 
-    public int getRowCountForTable()
+    public int getTableRowCount()
     {
         return this.tableRowCount;
     }

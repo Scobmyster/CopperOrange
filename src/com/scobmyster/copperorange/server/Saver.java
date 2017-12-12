@@ -25,6 +25,8 @@ public class Saver {
             System.out.println("Saver.save: I am trying to write an xml file");
             if (!new File("ds").exists())
                 createDatastore();
+            if(new File("C:/gwt-2.8.1/CopperOrange/ds/" + naming + ".xml").exists())
+                deleteFile("C:/gwt-2.8.1/CopperOrange/ds/" + naming + ".xml");
             File file = new File("C:/gwt-2.8.1/CopperOrange/ds/" + naming + ".xml");
             System.out.println("Saver.save: Saved file to : " + file.getAbsolutePath());
             JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
@@ -46,6 +48,13 @@ public class Saver {
     private void createDatastore()
     {
         System.out.println("Saver.createDatastore: Datastore creation : " + new File("ds").mkdir());
+    }
+
+    private void deleteFile(String path)
+    {
+
+        File file = new File(path);
+        file.delete();
     }
 
 }

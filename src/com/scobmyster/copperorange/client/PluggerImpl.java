@@ -1,18 +1,25 @@
 package com.scobmyster.copperorange.client;
 
+import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.cellview.client.CellList;
+import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
+import com.google.gwt.view.client.SelectionChangeEvent;
+import com.google.gwt.view.client.SingleSelectionModel;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.process.client.*;
+import com.scobmyster.copperorange.client.process.server.RotaFetchNames;
 import com.scobmyster.copperorange.client.process.server.RotaLoadImpl;
 import com.scobmyster.copperorange.client.process.server.RotaSaveImpl;
 import com.scobmyster.copperorange.client.widgets.OrangeButton;
 import com.scobmyster.copperorange.client.widgets.OrangeFlexTable;
 import com.scobmyster.copperorange.client.widgets.OrangePopupPanel;
 import com.scobmyster.copperorange.client.widgets.OrangeTextbox;
+import javafx.scene.control.SelectionModel;
 
 import java.util.HashMap;
 
@@ -128,7 +135,7 @@ public class PluggerImpl
 
         //Load popup
         Label loadLabel = new Label();
-        saveLabel.setText("Enter name for rota to load: ");
+        loadLabel.setText("Enter name for rota to load: ");
 
         OrangeTextbox loadNameBox = new OrangeTextbox("loadNameBox");
         screenModel.setLoadNameBox(loadNameBox);
@@ -154,17 +161,35 @@ public class PluggerImpl
 
         });
 
+        TextCell textCell = new TextCell();
+        final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
+        CellList<String> rotaNames = new CellList<String>(textCell);
+        rotaNames.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.ENABLED);
+        rotaNames.addStyleName("customCellList");
+        rotaNames.setSelectionModel(selectionModel);
+        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+            @Override
+            public void onSelectionChange(SelectionChangeEvent selectionChangeEvent) {
+                String selected = selectionModel.getSelectedObject();
+                if(selected != null)
+                {
+                    screenModel.setSelectedFileToLoad(selected);
+                }
+            }
+        });
+        screenModel.setRotaNames(rotaNames);
+
         VerticalPanel loadPopVP = new VerticalPanel();
         HorizontalPanel loadPopHP = new HorizontalPanel();
         loadPopVP.add(loadLabel);
-        loadPopVP.add(loadNameBox);
+        loadPopVP.add(rotaNames);
         loadPopVP.add(loadPopHP);
         loadPopHP.add(loadNameButton);
         loadPopHP.add(loadCancelButton);
 
         OrangePopupPanel loadPop = new OrangePopupPanel("loadPop");
         loadPop.setVisible(false);
-        loadPop.setSize("128",  "128");
+        loadPop.setSize("256",  "256");
         loadPop.add(loadPopVP);
         screenModel.setLoadPop(loadPop);
 
@@ -200,6 +225,10 @@ public class PluggerImpl
         RotaLoadImpl rotaLoad = new RotaLoadImpl();
         rotaLoad.setScreenModel(screenModel);
         rotaLoad.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        RotaFetchNames rotaFetchNames = new RotaFetchNames();
+        rotaFetchNames.setScreenModel(screenModel);
+        rotaFetchNames.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
         //-------------------------------
 
         HashMap<String, ProcessModel> mapOfProcesses = new HashMap<>();
@@ -213,6 +242,7 @@ public class PluggerImpl
         mapOfProcesses.put(loadButton.getEventID(), (ProcessModel) rotaLoadName);
         mapOfProcesses.put(loadNameButton.getEventID(), (ProcessModel) rotaLoad);
         mapOfProcesses.put(loadCancelButton.getEventID(), (ProcessModel) rotaCancelLoadRota);
+        mapOfProcesses.put("fetchFiles", (ProcessModel) rotaFetchNames);
 
 
 
@@ -223,7 +253,7 @@ public class PluggerImpl
         root.add(newButton);
         root.add(saveButton);
         root.add(loadButton);
-        Window.alert("PluggerImpl.Setup: Done");
+        handler.handleEvent("fetchFiles");
     }
 
 

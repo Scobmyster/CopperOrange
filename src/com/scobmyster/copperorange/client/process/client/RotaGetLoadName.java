@@ -12,7 +12,6 @@ public class RotaGetLoadName implements ProcessModel
     @Override
     public void runProcess()
     {
-        Window.alert("Running Process: " + this.getClass().getName());
         screenModel.getLoadPop().center();
     }
 

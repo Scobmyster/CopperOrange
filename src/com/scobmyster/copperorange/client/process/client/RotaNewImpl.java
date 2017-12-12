@@ -17,7 +17,6 @@ public class RotaNewImpl implements ProcessModel
     @Override
     public void runProcess()
     {
-        Window.alert("Running new process");
         builder.newTable(screenModel.getRotaTable());
     }
 

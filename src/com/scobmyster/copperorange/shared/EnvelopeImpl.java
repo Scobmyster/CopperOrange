@@ -1,6 +1,7 @@
 package com.scobmyster.copperorange.shared;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class EnvelopeImpl implements Envelope, Serializable
 {
@@ -9,6 +10,7 @@ public class EnvelopeImpl implements Envelope, Serializable
     private String address = "";
     private String fileSaveName = "";
     private String rotaLoadName = "";
+    private List<String> rotaFileNames;
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -51,6 +53,17 @@ public class EnvelopeImpl implements Envelope, Serializable
     @Override
     public void setRotaLoadName(String rotaLoadName) {
         this.rotaLoadName = rotaLoadName;
+    }
+
+    @Override
+    public List<String> getRotaFileNames() {
+        return rotaFileNames;
+    }
+
+    @Override
+    public void setRotaFileNames(List<String> rotaFileNames)
+    {
+        this.rotaFileNames = rotaFileNames;
     }
 
 

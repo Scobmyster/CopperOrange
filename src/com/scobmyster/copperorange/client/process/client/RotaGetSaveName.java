@@ -12,7 +12,6 @@ public class RotaGetSaveName implements ProcessModel
     @Override
     public void runProcess()
     {
-        Window.alert("Running procsss: " + this.getClass().getName());
         screenmodel.getSavePop().center();
     }
 

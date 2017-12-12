@@ -30,4 +30,11 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
         new Loader().load(envelope);
         return envelope;
     }
+
+    @Override
+    public Envelope fetchFileNames(Envelope envelope) throws IllegalArgumentException
+    {
+        new Loader().populateList(envelope);
+        return envelope;
+    }
 }

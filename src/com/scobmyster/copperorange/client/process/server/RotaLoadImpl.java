@@ -22,10 +22,10 @@ public class RotaLoadImpl implements ProcessModel
     @Override
     public void runProcess()
     {
-        Window.alert("Running process: " + this.getClass().getName());
+        screenModel.getLoadPop().hide();
         envelope.setRotaModel(rota);
         envelope.setAddress("loadRota");
-        envelope.setRotaLoadName(screenModel.getLoadNameBox().getText());
+        envelope.setRotaLoadName(screenModel.getSelectedFileToLoad());
         service.loadRota(envelope, new AsyncCallback<Envelope>() {
             @Override
             public void onFailure(Throwable throwable)
@@ -37,7 +37,6 @@ public class RotaLoadImpl implements ProcessModel
             public void onSuccess(Envelope envelope)
             {
                 new ModelTranslator().translate(envelope.getRotaModel(), screenModel);
-                Window.alert("Success on the load apparently");
             }
         });
     }

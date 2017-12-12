@@ -8,6 +8,7 @@ import com.scobmyster.copperorange.shared.Envelope;
  */
 public interface OrangeServiceAsync
 {
-  void saveRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
-  void loadRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void saveRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void loadRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void fetchFileNames(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
 }

@@ -12,7 +12,6 @@ public class RotaCancelSaveRotaImpl implements ProcessModel
     @Override
     public void runProcess()
     {
-        Window.alert("Running process : " + this.getClass().getName());
         screenModel.getSavePop().hide();
     }
 

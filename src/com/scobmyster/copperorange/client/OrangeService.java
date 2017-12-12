@@ -13,4 +13,5 @@ public interface OrangeService extends RemoteService
 {
     Envelope saveRota(Envelope envelope) throws IllegalArgumentException;
     Envelope loadRota(Envelope envelope) throws IllegalArgumentException;
+    Envelope fetchFileNames(Envelope envelope) throws IllegalArgumentException;
 }

@@ -8,8 +8,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Loader {
+public class Loader
+{
 
     public Envelope load(Envelope envelope)
     {
@@ -31,6 +34,24 @@ public class Loader {
         }
         envelope.setRotaModel(rota);
         return envelope;
+    }
+
+    public Envelope populateList(Envelope envelope)
+    {
+        File[] filesInTargetDirectory = new File("C:/gwt-2.8.1/CopperOrange/ds/").listFiles();
+        List<String> fileNames = new ArrayList<>();
+        for(File file : filesInTargetDirectory)
+        {
+            String cutFileName = stripOffFileExtension(file.getName());
+            fileNames.add(cutFileName);
+        }
+        envelope.setRotaFileNames(fileNames);
+        return envelope;
+    }
+
+    public String stripOffFileExtension(String fileName)
+    {
+        return fileName.replaceAll(".xml", "");
     }
 
 }

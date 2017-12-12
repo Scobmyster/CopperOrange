@@ -19,7 +19,7 @@ public class RotaSaveImpl implements ProcessModel {
     @Override
     public void runProcess()
     {
-        Window.alert("Running Save Process");
+        screenModel.getSavePop().hide();
         Rota rotaModel = new Rota();
         new ModelTranslator().translate(this.screenModel, rotaModel);
         Envelope envelope = new EnvelopeImpl();
@@ -31,7 +31,7 @@ public class RotaSaveImpl implements ProcessModel {
             @Override
             public void onFailure(Throwable throwable)
             {
-
+                Window.alert("Failed to save the rota");
             }
 
             @Override

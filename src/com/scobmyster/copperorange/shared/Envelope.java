@@ -1,5 +1,7 @@
 package com.scobmyster.copperorange.shared;
 
+import java.util.List;
+
 public interface Envelope
 {
 
@@ -11,5 +13,7 @@ public interface Envelope
     void setFileSaveName(String fileSaveName);
     String getRotaLoadName();
     void setRotaLoadName(String rotaLoadName);
+    List<String> getRotaFileNames();
+    void setRotaFileNames(List<String> rotaFileNames);
 
 }
