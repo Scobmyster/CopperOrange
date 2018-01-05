@@ -2,68 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2db9475b-dc74-4286-a2ef-83bce8c203b4" name="Default" comment="New feature has been implemented for the table in addition to replacing cell widgets using textboxes to OrangeTableCell instead to allow easier modification also added a cellList for the table class which allows each table to keep tabs on every cell it has and every cell knows its own position in the table to help with loads and saves.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/Loading Rota.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/My Rota.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/New Rota.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/Rota Save.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/Santa Claus.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FD33C2227" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FD33D96F7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FD3961288" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FD3B86F15" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FD3CBEA90" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FE2B58717" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FE2B8C8E3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FE4E47E1E" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FE4E6DE8C" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FF7764C68" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FF787B0F2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FF8DCD6A5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FF8DFBA81" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FF8E1BD9E" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FFE27FFBB" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FFE3F8879" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FFE406A2A" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000015FFE407A08" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016008B5F2C7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016008B60AC2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001600E13B58B" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001600E13D1E8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012AFF1A9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012B3DAFE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012B56844" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012B72413" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012B92A33" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012C1C2A2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012C55282" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012C6EC23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012CB5236" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016012D25BC6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160164CC7FD" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001601689F4F7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160168A0D78" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160168BA6C6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160169BE19A" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016016A03D32" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016016A18D0D" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/deploy/copperorange/symbolMaps/199D670E641C4482A4559F1C98096699.symbolMap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/deploy/copperorange/symbolMaps/A544610105419B1B43095CD9995DD945.symbolMap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/deploy/copperorange/symbolMaps/C22962FBA36CC83A138FBED70BB3D6CC.symbolMap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/deploy/copperorange/symbolMaps/D3D1AED9204342E6DB3D92819ECAB186.symbolMap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/WEB-INF/deploy/copperorange/symbolMaps/DD73C0E6FCD550577FF3A8862AC03FFC.symbolMap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/199D670E641C4482A4559F1C98096699.cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/52138E32CACBC5DE7B5521929268B95E.gwt.rpc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/A544610105419B1B43095CD9995DD945.cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/C22962FBA36CC83A138FBED70BB3D6CC.cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/D3D1AED9204342E6DB3D92819ECAB186.cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/DD73C0E6FCD550577FF3A8862AC03FFC.cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/compilation-mappings.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/war/copperorange/copperorange.devmode.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CopperOrange.war" afterPath="$PROJECT_DIR$/CopperOrange.war" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ds/Security.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016041429FC0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414919A4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604149B462" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414B5F3D" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414C010B" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414E1544" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414EAAA8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414F8038" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160414FFEA9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604150AF81" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604150FFF6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604152A894" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-0000016041582899" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604158E438" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604159CE2B" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160415A8DFD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-00000160415B1374" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B77ECA6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B781E57" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B79D249" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7AAAE8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7B6C6D" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7C91DA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7D64F9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7DAF75" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7E0FB3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-a16975ef896ee526cd067ad8f9dd16d040e74002-FF35F588CF7564DE259004F02565B00E-000001604B7EB2BD" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ClientSideHandler.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ClientSideHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ModelTranslator.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ModelTranslator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/OrangeService.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/OrangeService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/OrangeServiceAsync.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/OrangeServiceAsync.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$1.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$10.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$10.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$2.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$3.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$4.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl$4.class" />
@@ -75,43 +47,35 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/PluggerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ScreenModelImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/ScreenModelImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/TableBuilder.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/TableBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaCancelSaveRotaImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaCancelSaveRotaImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaNewImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaNewImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaLoadImpl$1.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaLoadImpl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaSaveImpl$1.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaSaveImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/Loader.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/Loader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/OrangeServiceImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/OrangeServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/Saver.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/server/Saver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/shared/Envelope.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/shared/Envelope.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/shared/EnvelopeImpl.class" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/com/scobmyster/copperorange/shared/EnvelopeImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/jaasc.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jaasc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ds/Scanner.xml" afterPath="$PROJECT_DIR$/ds/Scanner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelSaveRotaImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelSaveRotaImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Loader.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Loader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java" afterPath="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/CopperOrange.css" afterPath="$PROJECT_DIR$/war/CopperOrange.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/copperorange/copperorange.nocache.js" afterPath="$PROJECT_DIR$/war/copperorange/copperorange.nocache.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/CopperOrange.html" afterPath="$PROJECT_DIR$/war/CopperOrange.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,92 +90,55 @@
       <file leaf-file-name="PluggerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+            <state relative-caret-position="430">
+              <caret line="339" column="45" lean-forward="false" selection-start-line="339" selection-start-column="45" selection-end-line="339" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#7253#7261#0" expanded="true" />
+                <element signature="e#7314#7322#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrangeFlexTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java">
+      <file leaf-file-name="CopperOrange.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/CopperOrange.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding>
-                <element signature="e#1186#1187#0" expanded="true" />
-                <element signature="e#1236#1237#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TableBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+            <state relative-caret-position="335">
+              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Utils.java">
+      <file leaf-file-name="CopperOrange.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/war/CopperOrange.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="67" column="26" lean-forward="false" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserLogin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/UserLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="50" column="96" lean-forward="false" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrangeSplitLayoutPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeSplitLayoutPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="13" column="5" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="13" selection-end-column="5" />
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding>
-                <element signature="e#124#125#0" expanded="true" />
-                <element signature="e#160#161#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#259#260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrangeTableCell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTableCell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelTranslator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="39" column="132" lean-forward="false" selection-start-line="39" selection-start-column="132" selection-end-line="39" selection-end-column="132" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Saver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RotaNewImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -230,6 +157,7 @@
     <findStrings>
       <find>post</find>
       <find>Window</find>
+      <find>celllist</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -248,12 +176,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/logging/LogManager.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Logger.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/logging/LogManager.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaAddRowImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTableCell.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/Rota.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Rota.java" />
@@ -263,28 +187,46 @@
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTextbox.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/CopperOrange.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeCellList.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Loader.java" />
-        <option value="$PROJECT_DIR$/war/CopperOrange.css" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaFetchNames.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelSaveRotaImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java" />
-        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Utils.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaOverwriteImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeLoggingBox.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaLoginPrompt.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangePasswordBox.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangePasswordTextBox.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangePasswordTextbox.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/UserLogin.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/User.java" />
         <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Login.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/UserManage.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/server/UserManager.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/UserHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/UserRegister.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeSplitLayoutPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/UserLogin.java" />
+        <option value="$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java" />
+        <option value="$PROJECT_DIR$/war/CopperOrange.html" />
+        <option value="$PROJECT_DIR$/war/CopperOrange.css" />
       </list>
     </option>
   </component>
@@ -320,6 +262,8 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,15 +296,6 @@
               <item name="copperorange" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="process" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CopperOrange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CopperOrange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="copperorange" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CopperOrange" type="b2602c69:ProjectViewProjectNode" />
@@ -408,8 +343,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,7 +478,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -556,10 +488,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42750534" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27173913" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27173913" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="358" y="651" width="1280" height="961" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19083156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -644,82 +576,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Logger.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/logging/LogManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/Row.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/Cell.java" />
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/HTMLTable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="121" column="24" lean-forward="false" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/TextBoxBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/TextBox.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/cell/client/ClickableTextCell.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/Button.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Rota.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/CopperOrange.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_project.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="138" column="52" lean-forward="true" selection-start-line="138" selection-start-column="52" selection-end-line="138" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/server/rpc/RemoteServiceServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -758,54 +614,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeCellList.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1193#1194#0" expanded="false" />
-            <element signature="e#1229#1230#0" expanded="false" />
-            <element signature="e#1311#1312#0" expanded="false" />
-            <element signature="e#1361#1362#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="109" lean-forward="false" selection-start-line="12" selection-start-column="109" selection-end-line="12" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="79" lean-forward="false" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTextbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -820,25 +628,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/CopperOrange.css">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaAddRowImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="1" lean-forward="false" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaFetchNames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/CopperOrange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaOverwriteImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTableCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeLoggingBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="63" lean-forward="true" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="65" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="260" column="12" lean-forward="false" selection-start-line="260" selection-start-column="12" selection-end-line="260" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/FlexTable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangePasswordTextbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1758#1759#0" expanded="false" />
-            <element signature="e#1800#1801#0" expanded="false" />
-            <element signature="e#1845#1846#0" expanded="false" />
-            <element signature="e#1886#1887#0" expanded="false" />
-            <element signature="e#1954#1955#0" expanded="false" />
-            <element signature="e#2014#2015#0" expanded="false" />
+            <element signature="e#260#261#0" expanded="false" />
+            <element signature="e#306#307#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,27 +756,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaAddRowImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="629">
+          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
           <folding>
-            <element signature="e#695#696#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#489#490#0" expanded="false" />
+            <element signature="e#528#529#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#666#667#0" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
+            <element signature="e#732#733#0" expanded="false" />
+            <element signature="e#795#796#0" expanded="false" />
+            <element signature="e#831#832#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaCancelLoadRotaImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Rota.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="374">
+          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding>
+            <element signature="e#775#776#0" expanded="false" />
+            <element signature="e#811#812#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="69" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/EnvelopeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+          <folding>
+            <element signature="e#1580#1581#0" expanded="false" />
+            <element signature="e#1622#1623#0" expanded="false" />
+            <element signature="e#1678#1679#0" expanded="false" />
+            <element signature="e#1715#1716#0" expanded="false" />
+            <element signature="e#1842#1843#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Envelope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="40" column="75" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="81" column="5" lean-forward="false" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#421#422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -876,184 +843,150 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#425#426#0" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetLoadName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaGetSaveName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#444#445#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaRemoveRowImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#570#571#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaFetchNames.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaLoginPrompt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ClientSideHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/CopperOrange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-          <folding>
-            <element signature="e#1129#1130#0" expanded="false" />
-          </folding>
+          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaLoadImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="391">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeServiceAsync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="103" lean-forward="false" selection-start-line="14" selection-start-column="103" selection-end-line="14" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/OrangeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="73" lean-forward="false" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/OrangeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="117" column="37" lean-forward="false" selection-start-line="117" selection-start-column="37" selection-end-line="117" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/client/RotaNewImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/UserRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#685#686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/RotaSaveImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-          <folding>
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1397#1398#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="50" column="69" lean-forward="false" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/server/Saver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="708">
+          <caret line="81" column="80" lean-forward="false" selection-start-line="75" selection-start-column="19" selection-end-line="81" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeFlexTable.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/UserHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="false" />
+            <element signature="e#236#237#0" expanded="false" />
+            <element signature="e#292#293#0" expanded="false" />
+            <element signature="e#338#339#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/FlexTable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/shared/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeSplitLayoutPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="13" selection-end-column="5" />
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding>
-            <element signature="e#124#125#0" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar!/com/google/gwt/user/client/ui/DockPanel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ScreenModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="200" column="35" lean-forward="false" selection-start-line="200" selection-start-column="35" selection-end-line="200" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4997#4998#0" expanded="true" />
+            <element signature="e#5050#5051#0" expanded="true" />
+            <element signature="e#5096#5097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/process/server/UserLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="50" column="96" lean-forward="false" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/PluggerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        <state relative-caret-position="430">
+          <caret line="339" column="45" lean-forward="false" selection-start-line="339" selection-start-column="45" selection-end-line="339" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7253#7261#0" expanded="true" />
+            <element signature="e#7314#7322#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/TableBuilder.java">
+    <entry file="file://$PROJECT_DIR$/war/CopperOrange.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+        <state relative-caret-position="335">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/widgets/OrangeTableCell.java">
+    <entry file="file://$PROJECT_DIR$/war/CopperOrange.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="817">
+          <caret line="67" column="26" lean-forward="false" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/scobmyster/copperorange/client/ModelTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="39" column="132" lean-forward="false" selection-start-line="39" selection-start-column="132" selection-end-line="39" selection-end-column="132" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

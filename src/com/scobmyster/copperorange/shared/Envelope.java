@@ -15,5 +15,9 @@ public interface Envelope
     void setRotaLoadName(String rotaLoadName);
     List<String> getRotaFileNames();
     void setRotaFileNames(List<String> rotaFileNames);
+    User getUserModel();
+    void setUserModel(User userModel);
+    boolean getUserGreenlight();
+    void setUserGreenlight(boolean userGreenlight);
 
 }

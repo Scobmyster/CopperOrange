@@ -11,17 +11,21 @@ public class RotaNewImpl implements ProcessModel
 {
 
     private ScreenModelImpl screenModel = new ScreenModelImpl();
-    private TableBuilder builder = new TableBuilder();
+    private TableBuilder builder;
 
 
     @Override
     public void runProcess()
     {
+        screenModel.getLogBox().logMessage("Running new process");
         builder.newTable(screenModel.getRotaTable());
+        screenModel.getLogBox().logMessage("New process has run");
     }
 
     public void setScreenModel(ScreenModelImpl screenModel) {
         this.screenModel = screenModel;
     }
+
+    public void setBuilder(TableBuilder builder) { this.builder = builder; }
 
 }

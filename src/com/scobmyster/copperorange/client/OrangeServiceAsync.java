@@ -11,4 +11,6 @@ public interface OrangeServiceAsync
     void saveRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void loadRota(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void fetchFileNames(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void login(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void register(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
 }

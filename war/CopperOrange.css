@@ -55,6 +55,15 @@ h1 {
     color: white;
 }
 
-.customCellList {
+.topnav {
+    background-color: #55e875;
+    height: 100px;
+    font-size: 400%;
+    text-align: center;
+    color: white;
 
+}
+
+.rootPanel{
+    align-content: center;
 }

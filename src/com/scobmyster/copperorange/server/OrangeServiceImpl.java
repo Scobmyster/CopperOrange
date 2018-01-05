@@ -11,6 +11,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeService {
 
     private static final long serialVersionUID = 1L;
+    UserManager userManager = new UserManager();
 
     public static void main(String[] args)
     {
@@ -37,4 +38,21 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
         new Loader().populateList(envelope);
         return envelope;
     }
+
+    @Override
+    public Envelope login(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Hitting the login on the server");
+        userManager.loginUser(envelope);
+        return envelope;
+    }
+
+    @Override
+    public Envelope register(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Hitting the register on the server");
+        userManager.registerUser(envelope);
+        return envelope;
+    }
+
 }

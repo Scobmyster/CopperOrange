@@ -13,11 +13,10 @@ public class OrangeFlexTable extends FlexTable
 
     private String componentID;
     private ScreenModelImpl screenModel;
-    private FlexCellFormatter cellFormatter = this.getFlexCellFormatter();
     private int tableRowCount = 0;
     private int columnCount = 0;
-    private int defColCount;
-    private int defRowCount;
+    private int defColCount = 5;
+    private int defRowCount = 1;
     private List<OrangeTableCell> cellList = new ArrayList();
 
 

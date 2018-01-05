@@ -7,10 +7,12 @@ public class EnvelopeImpl implements Envelope, Serializable
 {
 
     private Rota rotaModel = new Rota();
+    private User userModel = new User();
     private String address = "";
     private String fileSaveName = "";
     private String rotaLoadName = "";
     private List<String> rotaFileNames;
+    private boolean userGreenlight;
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -64,6 +66,26 @@ public class EnvelopeImpl implements Envelope, Serializable
     public void setRotaFileNames(List<String> rotaFileNames)
     {
         this.rotaFileNames = rotaFileNames;
+    }
+
+    @Override
+    public User getUserModel() {
+        return userModel;
+    }
+
+    @Override
+    public void setUserModel(User userModel) {
+        this.userModel = userModel;
+    }
+
+    @Override
+    public boolean getUserGreenlight() {
+        return userGreenlight;
+    }
+
+    @Override
+    public void setUserGreenlight(boolean userGreenlight) {
+        this.userGreenlight = userGreenlight;
     }
 
 

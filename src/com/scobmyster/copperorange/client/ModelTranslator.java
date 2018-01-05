@@ -1,11 +1,11 @@
 package com.scobmyster.copperorange.client;
 
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.FlexTable.FlexCellFormatter;
 import com.scobmyster.copperorange.client.widgets.OrangeFlexTable;
+import com.scobmyster.copperorange.client.widgets.OrangeLoggingBox;
 import com.scobmyster.copperorange.client.widgets.OrangeTableCell;
 import com.scobmyster.copperorange.shared.Rota;
+import com.scobmyster.copperorange.shared.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,19 @@ import java.util.List;
 public class ModelTranslator
 {
 
+
+
     public Rota translate(ScreenModelImpl screenModel, Rota rota)
     {
+        OrangeLoggingBox logbox = screenModel.getLogBox();
         OrangeFlexTable table = screenModel.getRotaTable();
         List<String> text = new ArrayList<>();
+        logbox.logMessage("Cell list size: " + table.getCellList().size());
+
         int[] rowpos = new int[table.getCellList().size()];
         int[] colpos = new int[table.getCellList().size()];
         int counter = 0;
+
         for(OrangeTableCell cell : table.getCellList())
         {
             text.add(cell.getText());
@@ -27,23 +33,29 @@ public class ModelTranslator
             colpos[counter] = cell.getCol();
             counter++;
         }
+
         rota.setCellText(text.toArray(new String[0]));
         rota.setRowpos(rowpos);
         rota.setColpos(colpos);
+
         return rota;
     }
 
     public ScreenModelImpl translate(Rota rota, ScreenModelImpl screenModel)
     {
+        OrangeLoggingBox logbox = screenModel.getLogBox();
         int counter = 0;
         FlexCellFormatter cellFormatter = screenModel.getRotaTable().getFlexCellFormatter();
-        //TODO : Find way of clearing the xml file of rows that are deleted by the user after loading a save probably a process call
         int rowLength = rota.getRowpos().length;
         int colLength = rota.getColpos().length;
-        Window.alert("This is the number of rows: " + rota.getRowpos()[(rowLength - 1)]);
-        Window.alert("This is the number of columns: " + rota.getColpos()[(colLength - 1)]);
+        logbox.logMessage("This is the number of rows: " + rota.getRowpos()[(rowLength - 1)]);
+        logbox.logMessage("This is the number of columns: " + rota.getColpos()[(colLength - 1)]);
         screenModel.getRotaTable().setTableRowCount(rota.getRowpos()[(rowLength - 1)]);
-        screenModel.getRotaTable().setColumnCount(rota.getColpos()[(colLength - 1)]);
+        int columnCount = rota.getColpos()[(colLength - 1)] + 1;
+        screenModel.getRotaTable().setColumnCount(columnCount);
+        logbox.logMessage("Size of rota cell text list: " + rota.getCellText().length);
+        screenModel.getRotaTable().getCellList().clear();
+
         for(String text : rota.getCellText())
         {
             OrangeTableCell tCell = new OrangeTableCell("cell", rota.getRowpos()[counter], rota.getColpos()[counter]);
@@ -53,7 +65,21 @@ public class ModelTranslator
             cellFormatter.setColSpan(rota.getRowpos()[counter], rota.getColpos()[counter], 400);
             counter++;
         }
+
+
+       logbox.logMessage("Translated back to screen cell list is: " + screenModel.getRotaTable().getCellList().size());
+
         return screenModel;
     }
+
+    public User translate(ScreenModelImpl screenModel, User user)
+    {
+        OrangeLoggingBox logbox = screenModel.getLogBox();
+        logbox.logMessage("Translating into user model");
+        user.setUsername(screenModel.getUsernameBox().getText());
+        user.setPassword(screenModel.getPasswordBox().getText());
+        return user;
+    }
+
 
 }
