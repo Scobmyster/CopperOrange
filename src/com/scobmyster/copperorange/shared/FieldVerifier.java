@@ -17,7 +17,7 @@ package com.scobmyster.copperorange.shared;
  * that all code is translatable and does not use native JavaScript. Code that
  * is not translatable (such as code that interacts with a database or the file
  * system) cannot be compiled into client-side JavaScript. Code that uses native
- * JavaScript (such as Widgets) cannot be run on the server.
+ * JavaScript (such as widgets) cannot be run on the server.
  * </p>
  */
 public class FieldVerifier {

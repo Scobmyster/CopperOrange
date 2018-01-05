@@ -1,5 +1,6 @@
 package com.scobmyster.copperorange.client;
 
+import com.google.gwt.user.client.Window;
 import com.scobmyster.copperorange.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -28,6 +29,6 @@ public class CopperOrange implements EntryPoint {
    */
   public void onModuleLoad()
   {
-    new PluggerImpl().setup(RootPanel.get());
+    new PluggerImpl().setup(RootPanel.get("copperorange"));
   }
 }

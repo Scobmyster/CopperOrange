@@ -1,48 +1,58 @@
 package com.scobmyster.copperorange.server;
 
 import com.scobmyster.copperorange.client.OrangeService;
-import com.scobmyster.copperorange.shared.FieldVerifier;
+import com.scobmyster.copperorange.shared.Envelope;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * The server-side implementation of the RPC service.
  */
-@SuppressWarnings("serial")
-public class OrangeServiceImpl extends RemoteServiceServlet implements
-        OrangeService {
 
-  public String greetServer(String input) throws IllegalArgumentException {
-    // Verify that the input is valid. 
-    if (!FieldVerifier.isValidName(input)) {
-      // If the input is not valid, throw an IllegalArgumentException back to
-      // the client.
-      throw new IllegalArgumentException(
-          "Name must be at least 4 characters long");
+public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeService {
+
+    private static final long serialVersionUID = 1L;
+    UserManager userManager = new UserManager();
+
+    public static void main(String[] args)
+    {
+
     }
 
-    String serverInfo = getServletContext().getServerInfo();
-    String userAgent = getThreadLocalRequest().getHeader("User-Agent");
-
-    // Escape data from the client to avoid cross-site script vulnerabilities.
-    input = escapeHtml(input);
-    userAgent = escapeHtml(userAgent);
-
-    return "Hello, " + input + "!<br><br>I am running " + serverInfo
-        + ".<br><br>It looks like you are using:<br>" + userAgent;
-  }
-
-  /**
-   * Escape an html string. Escaping data received from the client helps to
-   * prevent cross-site script vulnerabilities.
-   * 
-   * @param html the html string to escape
-   * @return the escaped string
-   */
-  private String escapeHtml(String html) {
-    if (html == null) {
-      return null;
+    @Override
+    public Envelope saveRota(Envelope envelope) throws IllegalArgumentException
+    {
+        new Saver().save(envelope);
+        return envelope;
     }
-    return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(
-        ">", "&gt;");
-  }
+
+    @Override
+    public Envelope loadRota(Envelope envelope) throws IllegalArgumentException
+    {
+        new Loader().load(envelope);
+        return envelope;
+    }
+
+    @Override
+    public Envelope fetchFileNames(Envelope envelope) throws IllegalArgumentException
+    {
+        new Loader().populateList(envelope);
+        return envelope;
+    }
+
+    @Override
+    public Envelope login(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Hitting the login on the server");
+        userManager.loginUser(envelope);
+        return envelope;
+    }
+
+    @Override
+    public Envelope register(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Hitting the register on the server");
+        userManager.registerUser(envelope);
+        return envelope;
+    }
+
 }
