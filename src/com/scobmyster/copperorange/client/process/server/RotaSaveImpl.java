@@ -4,6 +4,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.scobmyster.copperorange.client.ModelTranslator;
 import com.scobmyster.copperorange.client.OrangeServiceAsync;
+import com.scobmyster.copperorange.client.UserHolder;
 import com.scobmyster.copperorange.shared.Rota;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
 import com.scobmyster.copperorange.client.process.ProcessModel;
@@ -14,6 +15,7 @@ public class RotaSaveImpl implements ProcessModel {
 
     private ScreenModelImpl screenModel = new ScreenModelImpl();
     private OrangeServiceAsync service;
+    private UserHolder holder;
 
 
     @Override
@@ -26,6 +28,7 @@ public class RotaSaveImpl implements ProcessModel {
         envelope.setRotaModel(rotaModel);
         envelope.setAddress("saveRota");
         envelope.setFileSaveName(screenModel.getSaveNameBox().getText());
+        envelope.setUserModel(holder.getCurrentUser());
         screenModel.getSavePop().setVisible(false);
         service.saveRota(envelope, new AsyncCallback<Envelope>() {
             @Override
@@ -48,5 +51,10 @@ public class RotaSaveImpl implements ProcessModel {
 
     public void setService(OrangeServiceAsync service) {
         this.service = service;
+    }
+
+    public void setHolder(UserHolder holder)
+    {
+        this.holder = holder;
     }
 }

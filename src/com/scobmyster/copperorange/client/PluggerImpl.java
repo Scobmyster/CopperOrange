@@ -291,20 +291,24 @@ public class PluggerImpl
         RotaSaveImpl rotaSave = new RotaSaveImpl();
         rotaSave.setScreenModel(screenModel);
         rotaSave.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+        rotaSave.setHolder(userHolder);
 
         RotaLoadImpl rotaLoad = new RotaLoadImpl();
         rotaLoad.setScreenModel(screenModel);
         rotaLoad.setHandler(handler);
         rotaLoad.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+        rotaLoad.setHolder(userHolder);
 
         RotaFetchNames rotaFetchNames = new RotaFetchNames();
         rotaFetchNames.setScreenModel(screenModel);
         rotaFetchNames.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+        rotaFetchNames.setHolder(userHolder);
 
         UserLogin userLogin = new UserLogin();
         userLogin.setScreenModel(screenModel);
         userLogin.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
         userLogin.setUserHolder(userHolder);
+        userLogin.setHandler(handler);
 
         UserRegister userRegister = new UserRegister();
         userRegister.setScreenModel(screenModel);
@@ -352,7 +356,6 @@ public class PluggerImpl
 
         handler.setMapOfProcesses(mapOfProcesses);
         root.add(dock);
-        handler.handleEvent("fetchFiles");
         handler.handleEvent("loginPrompt");
     }
 

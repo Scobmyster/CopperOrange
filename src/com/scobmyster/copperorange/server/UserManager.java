@@ -23,6 +23,7 @@ public class UserManager
         userModel = envelope.getUserModel();
         populateUserBase();
         envelope.setUserGreenlight(checkUserValid(userModel));
+        envelope.setUserModel(userModel);
         return envelope;
     }
 
@@ -45,7 +46,16 @@ public class UserManager
         }
 
         if(correctName && correctPassword)
+        {
             userValid = true;
+            for(User user : userbase)
+            {
+                if(userModel.getUsername().equals(user.getUsername()))
+                {
+                    userModel.setDs_loc(user.getDs_loc());
+                }
+            }
+        }
         return userValid;
     }
 
@@ -77,13 +87,14 @@ public class UserManager
         if(checkUserCanRegister(userModel) == true)
         {
             System.out.println("Registering the user");
-            userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/users/" + userModel.getUsername() + ".xml");
+            String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + userModel.getUsername() + ".xml");
+            userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + userModel.getUsername());
             try
             {
-                File file = new File(userModel.getDs_loc());
+                File file = new File(regPath);
                 JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
                 Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
+                System.out.println("Saving to: " + file.getAbsolutePath());
                 jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
                 jaxbMarshaller.marshal(envelope.getUserModel(), file);
