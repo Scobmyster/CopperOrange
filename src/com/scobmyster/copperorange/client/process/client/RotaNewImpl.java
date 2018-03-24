@@ -19,7 +19,6 @@ public class RotaNewImpl implements ProcessModel
     {
         screenModel.getLogBox().logMessage("Running new process");
         builder.newTable(screenModel.getRotaTable());
-        screenModel.getLogBox().logMessage("New process has run");
     }
 
     public void setScreenModel(ScreenModelImpl screenModel) {

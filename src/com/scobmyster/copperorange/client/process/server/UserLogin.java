@@ -13,6 +13,7 @@ public class UserLogin implements ProcessModel {
     private OrangeServiceAsync service;
     private UserHolder userHolder;
     private ClientSideHandler handler;
+    private PluggerImpl plugger;
 
     @Override
     public void runProcess() {
@@ -42,7 +43,8 @@ public class UserLogin implements ProcessModel {
                     userHolder.setCurrentUser(success.getUserModel());
                     screenModel.getCurrentUser().setText(success.getUserModel().getUsername());
                     screenModel.getLogBox().logMessage("Users ds_loc is: " + success.getUserModel().getDs_loc());
-                    handler.handleEvent("fetchFiles");
+                    handler.handleEvent("fetchFiles", this.getClass().getName());
+                    plugger.setUser(success.getUserModel());
                 } else {
                     screenModel.getLogBox().logMessage("Error username or password incorrect");
                     screenModel.getLoginErrorLabel().setVisible(true);
@@ -67,5 +69,10 @@ public class UserLogin implements ProcessModel {
     public void setHandler(ClientSideHandler handler)
     {
         this.handler = handler;
+    }
+
+    public void setPlugger(PluggerImpl plugger)
+    {
+        this.plugger = plugger;
     }
 }

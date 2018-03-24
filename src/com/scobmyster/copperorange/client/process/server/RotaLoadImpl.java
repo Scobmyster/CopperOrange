@@ -14,7 +14,6 @@ public class RotaLoadImpl implements ProcessModel
 
     private ScreenModelImpl screenModel;
     private OrangeServiceAsync service;
-    private String rotaLoadName;
     private Envelope envelope = new EnvelopeImpl();
     private Rota rota = new Rota();
     private ClientSideHandler handler;
@@ -28,7 +27,7 @@ public class RotaLoadImpl implements ProcessModel
         envelope.setAddress("loadRota");
         envelope.setRotaLoadName(screenModel.getSelectedFileToLoad());
         envelope.setUserModel(holder.getCurrentUser());
-        handler.handleEvent(screenModel.getNewButton().getEventID());
+        handler.handleEvent(screenModel.getNewButton().getEventID(), this.getClass().getName());
         service.loadRota(envelope, new AsyncCallback<Envelope>() {
             @Override
             public void onFailure(Throwable throwable)

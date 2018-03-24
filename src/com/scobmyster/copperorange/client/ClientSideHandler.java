@@ -11,7 +11,7 @@ public class ClientSideHandler
     private HashMap<String, ProcessModel> mapOfProcesses;
     private OrangeLoggingBox logbox;
 
-    public void handleEvent(String eventID)
+    public void handleEvent(String eventID, String classname)
     {
        if(!mapOfProcesses.containsKey(eventID))
        {
@@ -19,7 +19,7 @@ public class ClientSideHandler
        }
        else
        {
-          logbox.logMessage("Running process: ".concat(eventID));
+          logbox.logMessage("Running process: ".concat(eventID) + " --- " + "from: ".concat(classname));
            ProcessModel subModel = mapOfProcesses.get(eventID);
            subModel.runProcess();
        }

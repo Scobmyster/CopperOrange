@@ -10,6 +10,7 @@ public class User implements Serializable
     private String username;
     private String password;
     private String ds_loc;
+    private String groupName;
 
     public String getUsername()
     {
@@ -40,5 +41,9 @@ public class User implements Serializable
     {
         this.ds_loc = ds_loc;
     }
+
+    public String getGroupName() { return groupName; }
+    @XmlElement
+    public void setGroupName(String groupName){ this.groupName = groupName; }
 
 }

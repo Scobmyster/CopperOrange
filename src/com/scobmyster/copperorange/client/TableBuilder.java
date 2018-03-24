@@ -44,30 +44,24 @@ public class TableBuilder {
         }
         fTable.setTableRowCount(highestRow);
         fTable.setColumnCount(highestColumn + 1);
-        logbox.logMessage("Table Row Count: " + fTable.getTableRowCount() + " Table Col Count: " + fTable.getColumnCount());
 
         return fTable;
 
     }
 
-    public void removeRow(OrangeFlexTable fTable) {
+    public void removeRow(OrangeFlexTable fTable)
+    {
 
-        logbox.logMessage("Inside remove row method");
         int counter = 0;
-        logbox.logMessage("Table Row Count: " + fTable.getTableRowCount());
         OrangeTableCell[] cells = fTable.getCellList().toArray(new OrangeTableCell[0]);
-        for(int i = 0; i < cells.length; i++)
-        {
+        for(int i = 0; i < cells.length; i++) {
             //logbox.logMessage("Cell: " + cells[i].getRow() + "," + cells[i].getCol());
-            if(cells[i].getRow() == fTable.getTableRowCount())
-            {
+            if (cells[i].getRow() == fTable.getTableRowCount()) {
                 fTable.remove(cells[i]);
                 fTable.getCellList().remove(cells[i]);
                 counter++;
             }
         }
-       //logbox.logMessage("Amount of times we hit a cell to remove: " + counter);
-        //fTable.removeRow(fTable.getTableRowCount());
         fTable.removeFromRowCount();
     }
 
@@ -88,20 +82,15 @@ public class TableBuilder {
     public void newTable(OrangeFlexTable fTable)
     {
         logbox.logMessage("Creating new table");
-        logbox.logMessage("Removing rows");
         while(fTable.getTableRowCount() >= fTable.getDefRowCount())
         {
-            logbox.logMessage("Row count: " + fTable.getTableRowCount());
-            logbox.logMessage("Def row count: " + fTable.getDefRowCount());
             removeRow(fTable);
         }
-        logbox.logMessage("Removing text");
         for(int i = 0; i < fTable.getCellList().size(); i++)
         {
             fTable.getCellList().get(i).setText("------------");
         }
        logbox.logMessage("New table generated");
-       logbox.logMessage("Cell list size from new table: " + fTable.getCellList().size());
     }
 
     public void setLogbox(OrangeLoggingBox logbox)

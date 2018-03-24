@@ -88,7 +88,7 @@ public class UserManager
         {
             System.out.println("Registering the user");
             String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + userModel.getUsername() + ".xml");
-            userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + userModel.getUsername());
+            userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + userModel.getUsername() + "/");
             try
             {
                 File file = new File(regPath);

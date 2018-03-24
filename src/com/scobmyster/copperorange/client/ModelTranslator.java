@@ -20,7 +20,6 @@ public class ModelTranslator
         OrangeLoggingBox logbox = screenModel.getLogBox();
         OrangeFlexTable table = screenModel.getRotaTable();
         List<String> text = new ArrayList<>();
-        logbox.logMessage("Cell list size: " + table.getCellList().size());
 
         int[] rowpos = new int[table.getCellList().size()];
         int[] colpos = new int[table.getCellList().size()];
@@ -48,12 +47,9 @@ public class ModelTranslator
         FlexCellFormatter cellFormatter = screenModel.getRotaTable().getFlexCellFormatter();
         int rowLength = rota.getRowpos().length;
         int colLength = rota.getColpos().length;
-        logbox.logMessage("This is the number of rows: " + rota.getRowpos()[(rowLength - 1)]);
-        logbox.logMessage("This is the number of columns: " + rota.getColpos()[(colLength - 1)]);
         screenModel.getRotaTable().setTableRowCount(rota.getRowpos()[(rowLength - 1)]);
         int columnCount = rota.getColpos()[(colLength - 1)] + 1;
         screenModel.getRotaTable().setColumnCount(columnCount);
-        logbox.logMessage("Size of rota cell text list: " + rota.getCellText().length);
         screenModel.getRotaTable().getCellList().clear();
 
         for(String text : rota.getCellText())
@@ -67,7 +63,6 @@ public class ModelTranslator
         }
 
 
-       logbox.logMessage("Translated back to screen cell list is: " + screenModel.getRotaTable().getCellList().size());
 
         return screenModel;
     }

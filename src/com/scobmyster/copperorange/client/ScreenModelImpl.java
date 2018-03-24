@@ -26,13 +26,17 @@ public class ScreenModelImpl implements ScreenModel
     private OrangeButton loadButton;
     private OrangeButton addRowButton;
     private OrangeButton removeRowButton;
+    private OrangeButton loadSelectedButton;
+    private OrangeButton loadCancelButton;
+    private OrangeButton saveRotaButton;
+    private OrangeButton saveCancelButton;
     private OrangeTextbox usernameBox;
     private OrangePasswordTextbox passwordBox;
     private OrangeButton loginButton;
     private OrangeButton registerButton;
     private OrangePopupPanel loginPop;
     private Label loginErrorLabel;
-    private DockPanel mainPanel;
+    private SplitLayoutPanel mainPanel;
     private Label currentUser;
 
     /*
@@ -188,12 +192,12 @@ public class ScreenModelImpl implements ScreenModel
         this.loginErrorLabel = loginErrorLabel;
     }
 
-    public DockPanel getMainPanel()
+    public SplitLayoutPanel getMainPanel()
     {
         return mainPanel;
     }
 
-    public void setMainPanel(DockPanel mainPanel)
+    public void setMainPanel(SplitLayoutPanel mainPanel)
     {
         this.mainPanel = mainPanel;
     }
@@ -204,6 +208,38 @@ public class ScreenModelImpl implements ScreenModel
 
     public void setCurrentUser(Label currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public OrangeButton getLoadCancelButton() {
+        return loadCancelButton;
+    }
+
+    public void setLoadCancelButton(OrangeButton loadCancelButton) {
+        this.loadCancelButton = loadCancelButton;
+    }
+
+    public OrangeButton getLoadSelectedButton() {
+        return loadSelectedButton;
+    }
+
+    public void setLoadSelectedButton(OrangeButton loadSelectedButton) {
+        this.loadSelectedButton = loadSelectedButton;
+    }
+
+    public OrangeButton getSaveRotaButton() {
+        return saveRotaButton;
+    }
+
+    public void setSaveRotaButton(OrangeButton saveRotaButton) {
+        this.saveRotaButton = saveRotaButton;
+    }
+
+    public OrangeButton getSaveCancelButton() {
+        return saveCancelButton;
+    }
+
+    public void setSaveCancelButton(OrangeButton saveCancelButton) {
+        this.saveCancelButton = saveCancelButton;
     }
 }
 

@@ -38,7 +38,7 @@ public class Saver {
                 System.out.println("Saver.save: Beginining to copy old file");
                 FileInputStream ins = null;
                 FileOutputStream outs = null;
-                String rewritePath = envelope.getUserModel().getDs_loc()+ "/" + naming + "(" + dateToStr + ")" + ".xml";
+                String rewritePath = envelope.getUserModel().getDs_loc() + naming + "(" + dateToStr + ")" + ".xml";
                 File copyFile = new File(rewritePath);
                 try
                 {
