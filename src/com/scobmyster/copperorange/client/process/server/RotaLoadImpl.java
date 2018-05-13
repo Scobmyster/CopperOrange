@@ -2,10 +2,7 @@ package com.scobmyster.copperorange.client.process.server;
 
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.scobmyster.copperorange.client.ClientSideHandler;
-import com.scobmyster.copperorange.client.ModelTranslator;
-import com.scobmyster.copperorange.client.OrangeServiceAsync;
-import com.scobmyster.copperorange.client.ScreenModelImpl;
+import com.scobmyster.copperorange.client.*;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.widgets.OrangeTableCell;
 import com.scobmyster.copperorange.shared.Envelope;
@@ -17,10 +14,10 @@ public class RotaLoadImpl implements ProcessModel
 
     private ScreenModelImpl screenModel;
     private OrangeServiceAsync service;
-    private String rotaLoadName;
     private Envelope envelope = new EnvelopeImpl();
     private Rota rota = new Rota();
     private ClientSideHandler handler;
+    private UserHolder holder;
 
     @Override
     public void runProcess()
@@ -29,7 +26,8 @@ public class RotaLoadImpl implements ProcessModel
         envelope.setRotaModel(rota);
         envelope.setAddress("loadRota");
         envelope.setRotaLoadName(screenModel.getSelectedFileToLoad());
-        handler.handleEvent(screenModel.getNewButton().getEventID());
+        envelope.setUserModel(holder.getCurrentUser());
+        handler.handleEvent(screenModel.getNewButton().getEventID(), this.getClass().getName());
         service.loadRota(envelope, new AsyncCallback<Envelope>() {
             @Override
             public void onFailure(Throwable throwable)
@@ -56,5 +54,10 @@ public class RotaLoadImpl implements ProcessModel
     public void setHandler(ClientSideHandler handler)
     {
         this.handler = handler;
+    }
+
+    public void setHolder(UserHolder holder)
+    {
+        this.holder = holder;
     }
 }

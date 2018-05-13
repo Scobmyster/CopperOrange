@@ -26,19 +26,19 @@ public class Saver {
         String dateToStr = dateFormat.format(date);
 
         String naming = envelope.getFileSaveName();
-        String path = "C:/gwt-2.8.1/CopperOrange/ds/" + naming + ".xml";
+        String path = envelope.getUserModel().getDs_loc() + naming + ".xml";
 
 
             System.out.println("Saver.save: Checking for datastore");
-            if (!new File("ds").exists())
-                createDatastore();
+            if (!new File(envelope.getUserModel().getDs_loc()).exists())
+                createDatastore(envelope.getUserModel().getDs_loc());
             File file = new File(path);
             if (file.exists())
             {
                 System.out.println("Saver.save: Beginining to copy old file");
                 FileInputStream ins = null;
                 FileOutputStream outs = null;
-                String rewritePath = "C:/gwt-2.8.1/CopperOrange/ds/" + naming + "(" + dateToStr + ")" + ".xml";
+                String rewritePath = envelope.getUserModel().getDs_loc() + naming + "(" + dateToStr + ")" + ".xml";
                 File copyFile = new File(rewritePath);
                 try
                 {
@@ -107,9 +107,9 @@ public class Saver {
         return envelope;
     }
 
-    private void createDatastore()
+    private void createDatastore(String path)
     {
-        System.out.println("Saver.createDatastore: Datastore creation : " + new File("ds").mkdir());
+        System.out.println("Saver.createDatastore: Datastore creation : " + new File(path).mkdir());
     }
 
 

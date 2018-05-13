@@ -21,7 +21,7 @@ public class Loader
         System.out.println("Loading up rota: " + loadName);
         try
         {
-            File file = new File("C:/gwt-2.8.1/CopperOrange/ds/" + loadName + ".xml");
+            File file = new File(envelope.getUserModel().getDs_loc() + "/" + loadName + ".xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -38,7 +38,7 @@ public class Loader
 
     public Envelope populateList(Envelope envelope)
     {
-        File[] filesInTargetDirectory = new File("C:/gwt-2.8.1/CopperOrange/ds/").listFiles();
+        File[] filesInTargetDirectory = new File(envelope.getUserModel().getDs_loc()).listFiles();
         List<String> fileNames = new ArrayList<>();
         for(File file : filesInTargetDirectory)
         {

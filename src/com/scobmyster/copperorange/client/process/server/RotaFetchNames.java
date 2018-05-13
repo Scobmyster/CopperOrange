@@ -4,6 +4,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.scobmyster.copperorange.client.OrangeServiceAsync;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
+import com.scobmyster.copperorange.client.UserHolder;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.shared.Envelope;
 import com.scobmyster.copperorange.shared.EnvelopeImpl;
@@ -13,12 +14,14 @@ public class RotaFetchNames implements ProcessModel
 
 
     private ScreenModelImpl screenModel;
-    private Envelope envelope = new EnvelopeImpl();
     private OrangeServiceAsync service;
+    private UserHolder holder;
 
     @Override
     public void runProcess()
     {
+        Envelope envelope = new EnvelopeImpl();
+        envelope.setUserModel(holder.getCurrentUser());
         service.fetchFileNames(envelope, new AsyncCallback<Envelope>() {
             @Override
             public void onFailure(Throwable throwable)
@@ -41,5 +44,9 @@ public class RotaFetchNames implements ProcessModel
 
     public void setService(OrangeServiceAsync service) {
         this.service = service;
+    }
+
+    public void setHolder(UserHolder holder) {
+        this.holder = holder;
     }
 }

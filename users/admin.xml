@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <user>
+	<ds_loc>C:/gwt-2.8.1/CopperOrange/ds/admin/</ds_loc>
 	<username>admin</username>
 	<password>password</password>
 </user>
