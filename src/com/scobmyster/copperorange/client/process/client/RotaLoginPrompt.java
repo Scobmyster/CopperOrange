@@ -32,12 +32,7 @@ public class RotaLoginPrompt implements ProcessModel
 
     public void disableScreen()
     {
-        screenModel.getRotaTable().setVisible(false);
-        screenModel.getNewButton().setVisible(false);
-        screenModel.getAddRowButton().setVisible(false);
-        screenModel.getRemoveRowButton().setVisible(false);
-        screenModel.getSaveButton().setVisible(false);
-        screenModel.getLoadButton().setVisible(false);
+
     }
 }
 

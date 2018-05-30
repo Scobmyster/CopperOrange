@@ -17,6 +17,7 @@ public class PopupBuilder
 
     private String classname = this.getClass().getName();
     private OrangeLoggingBox logbox;
+    private String className = this.getClass().getName();
 
 
     public OrangePopupPanel buildLoadPopup(String explainText, ClientSideHandler handle, ScreenModelImpl screen)
@@ -30,36 +31,11 @@ public class PopupBuilder
 
         Label lb_explain = new Label(explainText);
 
-        final OrangeButton bt_loadRota = new OrangeButton("bt_loadRota");
-        bt_loadRota.setText("Load");
-        bt_loadRota.setEventID(classname + " : " + bt_loadRota.getComponentID());
-        bt_loadRota.addClickHandler(new ClickHandler()
-        {
-            @Override
-            public void onClick(ClickEvent clickEvent)
-            {
-                logbox.logMessage("Clicking load");
-                handler.handleEvent(bt_loadRota.getEventID(), this.getClass().getName());
-            }
-        });
+        final OrangeButton bt_loadRota = new OrangeButton("bt_loadRota", handler, "Load", className);
 
         screenModel.setLoadSelectedButton(bt_loadRota);
 
-        final OrangeButton bt_loadCancel = new OrangeButton("bt_loadCancel");
-        bt_loadCancel.setText("Cancel");
-        bt_loadCancel.setEventID(classname + " : " + bt_loadCancel.getComponentID());
-        bt_loadRota.addClickHandler(new ClickHandler()
-        {
-            @Override
-            public void onClick(ClickEvent clickEvent)
-            {
-                if(screenModel.getLoadPop().isVisible() == true) {
-                    logbox.logMessage("Clicking cancel");
-                    handler.handleEvent(bt_loadCancel.getEventID(), this.getClass().getName());
-                }
-            }
-        });
-
+        final OrangeButton bt_loadCancel = new OrangeButton("bt_loadCancel", handler, "Cancel", className);
 
         screenModel.setLoadCancelButton(bt_loadCancel);
 
@@ -109,27 +85,10 @@ public class PopupBuilder
         OrangeTextbox saveNameBox = new OrangeTextbox("saveNameBox");
         screenModel.setSaveNameBox(saveNameBox);
 
-        final OrangeButton bt_saveName = new OrangeButton("bt_saveName");
-        bt_saveName.setText("Save Rota");
-        bt_saveName.setEventID(this.getClass().getName() + "." + bt_saveName.getComponentID());
-        bt_saveName.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(bt_saveName.getEventID(), this.getClass().getName());
-            }
-        });
+        final OrangeButton bt_saveName = new OrangeButton("bt_saveName", handler, "Save Rota", className);
         screenModel.setSaveRotaButton(bt_saveName);
 
-        final OrangeButton bt_saveCancel = new OrangeButton("bt_saveCancel");
-        bt_saveCancel.setText("Cancel");
-        bt_saveCancel.setEventID(this.getClass().getName() + "." + bt_saveCancel.getComponentID());
-        bt_saveCancel.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                logbox.logMessage("Clicking cancel on save");
-                handler.handleEvent(bt_saveCancel.getEventID(), this.getClass().getName());
-            }
-        });
+        final OrangeButton bt_saveCancel = new OrangeButton("bt_saveCancel", handler, "Cancel", className);
         screenModel.setSaveCancelButton(bt_saveCancel);
 
         VerticalPanel savePopVP = new VerticalPanel();
@@ -163,26 +122,10 @@ public class PopupBuilder
         OrangePasswordTextbox passwordBox = new OrangePasswordTextbox("passwordBox");
         screenModel.setPasswordBox(passwordBox);
 
-        final OrangeButton bt_login = new OrangeButton("bt_login");
-        bt_login.setText("Login");
-        bt_login.setEventID(this.getClass().getName() + "." + bt_login.getComponentID());
-        bt_login.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(bt_login.getEventID(), this.getClass().getName());
-            }
-        });
+        final OrangeButton bt_login = new OrangeButton("bt_login", handler, "Login", className);
         screenModel.setLoginButton(bt_login);
 
-        final OrangeButton bt_register = new OrangeButton("bt_register");
-        bt_register.setText("Register");
-        bt_register.setEventID(this.getClass().getName() + "." + bt_register.getComponentID());
-        bt_register.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(bt_register.getEventID(), this.getClass().getName());
-            }
-        });
+        final OrangeButton bt_register = new OrangeButton("bt_register", handler, "Register", className);
         screenModel.setRegisterButton(bt_register);
 
         Label loginErrorLabel = new Label("Error username or password incorrect");
@@ -213,9 +156,107 @@ public class PopupBuilder
         return pop_login;
     }
 
-    public OrangePopupPanel buildGroupPopup(String explainText, ClientSideHandler handle, ScreenModelImpl screen)
+    public OrangePopupPanel buildGroupRegisterPopup(String explainText, ClientSideHandler handle, ScreenModelImpl screen)
     {
-        return null;
+        ClientSideHandler handler = handle;
+        final ScreenModelImpl screenModel = screen;
+
+        Label title = new Label(explainText);
+
+        Label lb_groupName = new Label("Group Name: ");
+
+        OrangeTextbox groupName = new OrangeTextbox("groupName");
+        screenModel.setGroupName(groupName);
+
+        final OrangeButton bt_RegisterGroup = new OrangeButton("bt_RegisterGroup", handler, "Register Group", className);
+        screenModel.setBt_RegisterGroup(bt_RegisterGroup);
+
+        final OrangeButton bt_CancelRegisterGroup = new OrangeButton("bt_CancelRegisterGroup", handler, "Cancel", className);
+        screenModel.setBt_CancelRegisterGroup(bt_CancelRegisterGroup);
+
+        HorizontalPanel buttonPanel = new HorizontalPanel();
+        buttonPanel.add(bt_RegisterGroup);
+        buttonPanel.add(bt_CancelRegisterGroup);
+
+        VerticalPanel vp = new VerticalPanel();
+        vp.add(title);
+        vp.add(lb_groupName);
+        vp.add(groupName);
+        vp.add(buttonPanel);
+
+        OrangePopupPanel pop_GroupRegister = new OrangePopupPanel("pop_groupRegister");
+        pop_GroupRegister.setVisible(false);
+        pop_GroupRegister.setSize("1024", "1024");
+        pop_GroupRegister.add(vp);
+        screenModel.setPop_GroupRegister(pop_GroupRegister);
+
+        return pop_GroupRegister;
+    }
+
+    public OrangePopupPanel buildFindGroupPopup(String explainText, ClientSideHandler clientSideHandler, ScreenModelImpl screenModelImpl)
+    {
+        ClientSideHandler handler = clientSideHandler;
+        final ScreenModelImpl screenModel = screenModelImpl;
+
+        Label title = new Label(explainText);
+
+        Label lb_findResults = new Label("Group Results");
+
+        TextCell textCell = new TextCell();
+        final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
+        CellList<String> groupNames = new CellList<String>(textCell);
+        groupNames.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.ENABLED);
+        groupNames.addStyleName("customCellList");
+        groupNames.setSelectionModel(selectionModel);
+        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+            @Override
+            public void onSelectionChange(SelectionChangeEvent selectionChangeEvent)
+            {
+                String selected = selectionModel.getSelectedObject();
+                if(selected != null)
+                {
+                    screenModel.setSelectedGroupToLoad(selected);
+                }
+            }
+        });
+        screenModel.setGroupNames(groupNames);
+
+        OrangeButton bt_JoinGroup = new OrangeButton("bt_JoinGroup", handler, "Join", className);
+        screenModel.setBt_JoinGroup(bt_JoinGroup);
+
+        Label lb_searchBox = new Label("Search for: ");
+
+        OrangeTextbox groupSearchBox = new OrangeTextbox("groupSearchBox");
+        screenModel.setGroupSearchBox(groupSearchBox);
+
+        OrangeButton bt_SearchForGroups = new OrangeButton("bt_SearchForGroups", handler, "Search", className);
+        screenModel.setBt_SearchForGroups(bt_SearchForGroups);
+
+        OrangeButton bt_CancelFindGroup = new OrangeButton("bt_CancelFindGroup", handler, "Cancel", className);
+        screenModel.setBt_CancelFindGroup(bt_CancelFindGroup);
+
+        HorizontalPanel resultsPanel = new HorizontalPanel();
+        resultsPanel.add(groupNames);
+        resultsPanel.add(bt_JoinGroup);
+
+        HorizontalPanel buttonPanel = new HorizontalPanel();
+        buttonPanel.add(bt_SearchForGroups);
+        buttonPanel.add(bt_CancelFindGroup);
+
+        VerticalPanel mainPanel = new VerticalPanel();
+        mainPanel.add(title);
+        mainPanel.add(lb_findResults);
+        mainPanel.add(resultsPanel);
+        mainPanel.add(lb_searchBox);
+        mainPanel.add(groupSearchBox);
+        mainPanel.add(buttonPanel);
+
+
+        OrangePopupPanel pop_FindGroup = new OrangePopupPanel("pop_FindGroup", false, "1024");
+        pop_FindGroup.add(mainPanel);
+        screenModel.setPop_FindGroup(pop_FindGroup);
+
+        return pop_FindGroup;
     }
 
     public void setLogBox(OrangeLoggingBox logbox)

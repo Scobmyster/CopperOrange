@@ -16,6 +16,13 @@ public class OrangePopupPanel extends PopupPanel
         this.componentID = componentID;
     }
 
+    public OrangePopupPanel(String componentID, boolean visible, String size)
+    {
+        this.componentID = componentID;
+        this.setVisible(visible);
+        this.setSize(size, size);
+    }
+
     public String getComponentID() {
         return componentID;
     }

@@ -16,4 +16,7 @@ public interface OrangeService extends RemoteService
     Envelope fetchFileNames(Envelope envelope) throws IllegalArgumentException;
     Envelope login(Envelope envelope) throws IllegalArgumentException;
     Envelope register(Envelope envelope) throws IllegalArgumentException;
+    Envelope registerGroup(Envelope envelope) throws IllegalArgumentException;
+    Envelope fetchGroupNames(Envelope envelope) throws IllegalArgumentException;
+    Envelope joinGroup(Envelope envelope) throws IllegalArgumentException;
 }

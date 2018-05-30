@@ -1,15 +1,7 @@
 package com.scobmyster.copperorange.client;
 
-import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.cellview.client.CellList;
-import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
-import com.google.gwt.view.client.SelectionChangeEvent;
-import com.google.gwt.view.client.SingleSelectionModel;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.process.client.*;
 import com.scobmyster.copperorange.client.process.server.*;
@@ -26,20 +18,17 @@ public class PluggerImpl
     private TableBuilder tableBuilder = new TableBuilder();
     private OrangeFlexTable rotaTable = new OrangeFlexTable("rotaTable");
     private UserHolder userHolder = new UserHolder();
-<<<<<<< HEAD
+
     private String className = this.getClass().getName() + ".";
-=======
+
     private PopupBuilder pop_builder = new PopupBuilder();
->>>>>>> custom-datastore
+
 
 
     public void setup(RootPanel root) {
         //Logging box
-<<<<<<< HEAD
+
         OrangeLoggingBox logbox = new OrangeLoggingBox("logbox", handler);
-=======
-        final OrangeLoggingBox logbox = new OrangeLoggingBox("logbox");
->>>>>>> custom-datastore
         logbox.logMessage("Logging startup");
         screenModel.setLogbox(logbox);
         tableBuilder.setLogbox(logbox);
@@ -49,7 +38,7 @@ public class PluggerImpl
         rotaTable = tableBuilder.createTable(5, 4);
         screenModel.setRotaTable(rotaTable);
 
-<<<<<<< HEAD
+
         final OrangeButton addRowButton = new OrangeButton("addRow", handler, "Add Row", className);
         screenModel.setAddRowButton(addRowButton);
 
@@ -75,183 +64,13 @@ public class PluggerImpl
         Label username = new Label(userHolder.getCurrentUser().getUsername());
         screenModel.setCurrentUser(username);
 
-        final OrangeButton addGroupButton = new OrangeButton("addGroupButton", handler, "Add Group", className);
-
+        final OrangeButton CreateGroupButton = new OrangeButton("CreateGroupButton", handler, "Create Group", className);
+        final OrangeButton FindGroupButton = new OrangeButton("FindGroupButton", handler, "Find Group", className);
 
         VerticalPanel userPanel = new VerticalPanel();
         userPanel.add(username);
-        userPanel.add(addGroupButton);
-
-        //Save popup
-        Label saveLabel = new Label();
-        saveLabel.setText("Enter name for rota: ");
-
-        OrangeTextbox saveNameBox = new OrangeTextbox("saveNameBox");
-        screenModel.setSaveNameBox(saveNameBox);
-
-        final OrangeButton saveNameButton = new OrangeButton("saveNameButton", handler, "Save Rota", className);
-
-        final OrangeButton saveCancelButton = new OrangeButton("saveCancelButton", handler, "Cancel", className);
-
-        VerticalPanel savePopVP = new VerticalPanel();
-        HorizontalPanel savePopHP = new HorizontalPanel();
-        savePopVP.add(saveLabel);
-        savePopVP.add(saveNameBox);
-        savePopVP.add(savePopHP);
-        savePopHP.add(saveNameButton);
-        savePopHP.add(saveCancelButton);
-
-        OrangePopupPanel savePop = new OrangePopupPanel("loadPop");
-        savePop.setVisible(false);
-        savePop.setSize("128",  "128");
-        savePop.add(savePopVP);
-        screenModel.setSavePop(savePop);
-        //----------------------------------------------------------------------------
-
-        //Load popup
-        Label loadLabel = new Label();
-        loadLabel.setText("Enter name for rota to load: ");
-
-        OrangeTextbox loadNameBox = new OrangeTextbox("loadNameBox");
-        screenModel.setLoadNameBox(loadNameBox);
-
-        final OrangeButton loadNameButton = new OrangeButton("loadNameButton", handler, "Load Rota", className);
-
-        final OrangeButton loadCancelButton = new OrangeButton("loadCancelButton", handler, "Cancel", className);
-
-        TextCell textCell = new TextCell();
-        
-        final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
-        CellList<String> rotaNames = new CellList<String>(textCell);
-        rotaNames.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.ENABLED);
-        rotaNames.addStyleName("customCellList");
-        rotaNames.setSelectionModel(selectionModel);
-        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
-            @Override
-            public void onSelectionChange(SelectionChangeEvent selectionChangeEvent) {
-                String selected = selectionModel.getSelectedObject();
-                if(selected != null)
-                {
-                    screenModel.setSelectedFileToLoad(selected);
-                }
-            }
-        });
-        screenModel.setRotaNames(rotaNames);
-
-        VerticalPanel loadPopVP = new VerticalPanel();
-        HorizontalPanel loadPopHP = new HorizontalPanel();
-        loadPopVP.add(loadLabel);
-        loadPopVP.add(rotaNames);
-        loadPopVP.add(loadPopHP);
-        loadPopHP.add(loadNameButton);
-        loadPopHP.add(loadCancelButton);
-
-        OrangePopupPanel loadPop = new OrangePopupPanel("loadPop");
-        loadPop.setVisible(false);
-        loadPop.setSize("256",  "256");
-        loadPop.add(loadPopVP);
-        screenModel.setLoadPop(loadPop);
-        //----------------------------------------------------------------------------
-
-        //Login Popup
-        Label loginTitle = new Label("Sign In");
-
-        Label usernameLabel = new Label("Username:");
-
-        OrangeTextbox usernameBox = new OrangeTextbox("usernameBox");
-        screenModel.setUsernameBox(usernameBox);
-
-        Label passwordLabel = new Label("Password: ");
-
-        OrangePasswordTextbox passwordBox = new OrangePasswordTextbox("passwordBox");
-        screenModel.setPasswordBox(passwordBox);
-
-        final OrangeButton loginButton = new OrangeButton("loginButton", handler, "Login", className);
-        screenModel.setLoginButton(loginButton);
-
-        final OrangeButton registerButton = new OrangeButton("registerButton", handler, "Register", className);
-        screenModel.setRegisterButton(registerButton);
-
-        Label loginErrorLabel = new Label("Error username or password incorrect");
-        loginErrorLabel.setVisible(false);
-        screenModel.setLoginErrorLabel(loginErrorLabel);
-
-        VerticalPanel loginPopVP = new VerticalPanel();
-        HorizontalPanel loginPopHP = new HorizontalPanel();
-        loginPopVP.add(loginTitle);
-        loginPopVP.add(usernameLabel);
-        loginPopVP.add(usernameBox);
-        loginPopVP.add(passwordLabel);
-        loginPopVP.add(passwordBox);
-        loginPopVP.add(loginPopHP);
-        loginPopHP.add(loginButton);
-        loginPopHP.add(registerButton);
-        loginPopVP.add(loginErrorLabel);
-
-        OrangePopupPanel loginPop = new OrangePopupPanel("loginPop");
-        loginPop.setVisible(false);
-        loginPop.setSize("1024", "1024");
-        loginPop.add(loginPopVP);
-        screenModel.setLoginPop(loginPop);
-
-        Label mainTitle = new Label("CopperOrange");
-        mainTitle.setSize("150", "300");
-
-=======
-        final OrangeButton addRowButton = new OrangeButton("addRow");
-        addRowButton.setText("Add Row");
-        addRowButton.setEventID(this.getClass().getName() + "." + addRowButton.getComponentID());
-        addRowButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(addRowButton.getEventID(), this.getClass().getName());
-            }
-        });
-        screenModel.setAddRowButton(addRowButton);
-
-        final OrangeButton removeRowButton = new OrangeButton("removeRow");
-        removeRowButton.setText("Remove Row");
-        removeRowButton.setEventID(this.getClass().getName() + "." + removeRowButton.getComponentID());
-        removeRowButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(removeRowButton.getEventID(), this.getClass().getName());
-            }
-        });
-        screenModel.setRemoveRowButton(removeRowButton);
-
-        final OrangeButton newButton = new OrangeButton("new");
-        newButton.setText("New");
-        newButton.setEventID(this.getClass().getName() + "." + newButton.getComponentID());
-        newButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(newButton.getEventID(), this.getClass().getName());
-            }
-        });
-        screenModel.setNewButton(newButton);
-
-        final OrangeButton saveButton = new OrangeButton("save");
-        saveButton.setText("Save");
-        saveButton.setEventID(this.getClass().getName() + "." + saveButton.getComponentID());
-        saveButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(saveButton.getEventID(), this.getClass().getName());
-            }
-        });
-        screenModel.setSaveButton(saveButton);
-
-        final OrangeButton loadButton = new OrangeButton("load");
-        loadButton.setText("Load");
-        loadButton.setEventID(this.getClass().getName() + "." + loadButton.getComponentID());
-        loadButton.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent clickEvent) {
-                handler.handleEvent(loadButton.getEventID(), this.getClass().getName());
-            }
-        });
-        screenModel.setLoadButton(loadButton);
+        userPanel.add(CreateGroupButton);
+        userPanel.add(FindGroupButton);
 
         //SAVE POPUP------------------------------------------------------------------------------------------
         OrangePopupPanel pop_save = pop_builder.buildSavePopup("Enter name to save rota as: ", handler, screenModel);
@@ -266,8 +85,14 @@ public class PluggerImpl
         //LOGIN POPUP---------------------------------------------------------------------------
         OrangePopupPanel pop_login = pop_builder.buildLoginPopup("Sign in: ", handler, screenModel);
         screenModel.setLoginPop(pop_login);
->>>>>>> custom-datastore
         //----------------------------------------------------------------------------
+
+        //GROUP REGISTER POPUP-------------------------------------------------------------------
+        OrangePopupPanel pop_GroupRegister = pop_builder.buildGroupRegisterPopup("Register Group", handler, screenModel);
+        //----------------------------------------------------------------------------------------
+
+        //GROUP JOIN POPUP-------------------------------------------------------------------------
+        OrangePopupPanel pop_GroupJoin = pop_builder.buildFindGroupPopup("Find Group", handler, screenModel);
 
         //CLIENT EVENT STUFF----------------------------------------------------------
         RotaAddRowImpl rotaAddRow = new RotaAddRowImpl();
@@ -297,6 +122,18 @@ public class PluggerImpl
         RotaLoginPrompt rotaLoginPrompt = new RotaLoginPrompt();
         rotaLoginPrompt.setScreenModel(screenModel);
         rotaLoginPrompt.setLogbox(logbox);
+
+        GroupOpenRegisterPrompt groupOpenRegisterPrompt = new GroupOpenRegisterPrompt();
+        groupOpenRegisterPrompt.setScreenModel(screenModel);
+
+        GroupCloseRegisterPrompt groupCloseRegisterPrompt = new GroupCloseRegisterPrompt();
+        groupCloseRegisterPrompt.setScreenModel(screenModel);
+
+        GroupOpenFindPrompt groupOpenFindPrompt = new GroupOpenFindPrompt();
+        groupOpenFindPrompt.setScreenModel(screenModel);
+
+        GroupCloseFindPrompt groupCloseFindPrompt = new GroupCloseFindPrompt();
+        groupCloseFindPrompt.setScreenModel(screenModel);
         //--------------------------------------------------------------------------
 
         //SERVER EVENT STUFF---------------------------------------------------------
@@ -327,14 +164,27 @@ public class PluggerImpl
         userRegister.setScreenModel(screenModel);
         userRegister.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
         userRegister.setUserHolder(userHolder);
-<<<<<<< HEAD
+
+        GroupRegister groupRegister = new GroupRegister();
+        groupRegister.setScreenModel(screenModel);
+        groupRegister.setUserHolder(userHolder);
+        groupRegister.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        GroupFetchNames groupFetchNames = new GroupFetchNames();
+        groupFetchNames.setScreenModel(screenModel);
+        groupFetchNames.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        GroupJoinGroup groupJoinGroup = new GroupJoinGroup();
+        groupJoinGroup.setScreenModel(screenModel);
+        groupJoinGroup.setHolder(userHolder);
+        groupJoinGroup.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
 
         DebugButton debugButton = new DebugButton();
 
         //-------------------------------
-=======
+
         //------------------------------------------------------------------------------
->>>>>>> custom-datastore
+
 
         HashMap<String, ProcessModel> mapOfProcesses = new HashMap<>();
 
@@ -349,16 +199,18 @@ public class PluggerImpl
         mapOfProcesses.put(screenModel.getLoadCancelButton().getEventID(), (ProcessModel) rotaCancelLoadRota);
         mapOfProcesses.put("fetchFiles", (ProcessModel) rotaFetchNames);
         mapOfProcesses.put("loginPrompt", (ProcessModel) rotaLoginPrompt);
-<<<<<<< HEAD
-        mapOfProcesses.put(loginButton.getEventID(), (ProcessModel) userLogin);
-        mapOfProcesses.put(registerButton.getEventID(), (ProcessModel) userRegister);
-        mapOfProcesses.put(addGroupButton.getEventID(), (ProcessModel) debugButton);
+        
+        mapOfProcesses.put(CreateGroupButton.getEventID(), (ProcessModel) groupOpenRegisterPrompt);
+        mapOfProcesses.put(screenModel.getBt_RegisterGroup().getEventID(), (ProcessModel) groupRegister);
+        mapOfProcesses.put(screenModel.getBt_CancelRegisterGroup().getEventID(), (ProcessModel) groupCloseRegisterPrompt);
+        mapOfProcesses.put(FindGroupButton.getEventID(), (ProcessModel) groupOpenFindPrompt);
+        mapOfProcesses.put(screenModel.getBt_CancelFindGroup().getEventID(), (ProcessModel) groupCloseFindPrompt);
+        mapOfProcesses.put(screenModel.getBt_SearchForGroups().getEventID(), (ProcessModel) groupFetchNames);
+        mapOfProcesses.put(screenModel.getBt_JoinGroup().getEventID(), (ProcessModel) groupJoinGroup);
 
-
-=======
         mapOfProcesses.put(screenModel.getLoginButton().getEventID(), (ProcessModel) userLogin);
         mapOfProcesses.put(screenModel.getRegisterButton().getEventID(), (ProcessModel) userRegister);
->>>>>>> custom-datastore
+
 
 
 
@@ -366,25 +218,18 @@ public class PluggerImpl
         rotaPanel.add(rotaTable);
         rotaPanel.add(buttonPanel);
 
-        /*
-        DockPanel dock = new DockPanel();
-        dock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
-        dock.setSpacing(4);
-        dock.add(logbox, DockPanel.SOUTH);
-        dock.add(userPanel, DockPanel.WEST);
-        dock.add(rotaPanel, DockPanel.CENTER);
-        screenModel.setMainPanel(dock);
-        */
 
-        SplitLayoutPanel p = new SplitLayoutPanel();
-        p.addWest(userPanel, 128);
-        p.addNorth(logbox, 384);
-        p.add(rotaPanel);
-        screenModel.setMainPanel(p);
+        HorizontalPanel hp = new HorizontalPanel();
+        hp.add(userPanel);
+        hp.add(rotaPanel);
+        hp.add(logbox);
+        hp.setVisible(false);
+        screenModel.setHp(hp);
+
 
         handler.setMapOfProcesses(mapOfProcesses);
-        root.add(p);
-        handler.handleEvent("loginPrompt", this.getClass().getName());
+        root.add(hp);
+        handler.handleEvent("loginPrompt");
 
     }
 

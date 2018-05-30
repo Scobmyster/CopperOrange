@@ -33,17 +33,12 @@ public class UserLogin implements ProcessModel {
                 screenModel.getLogBox().logMessage("Success on login call");
                 screenModel.getLogBox().logMessage("Greenlight is: " + success.getUserGreenlight());
                 if (success.getUserGreenlight() == true) {
-                    screenModel.getRotaTable().setVisible(true);
-                    screenModel.getNewButton().setVisible(true);
-                    screenModel.getAddRowButton().setVisible(true);
-                    screenModel.getRemoveRowButton().setVisible(true);
-                    screenModel.getSaveButton().setVisible(true);
-                    screenModel.getLoadButton().setVisible(true);
+                    screenModel.getHp().setVisible(true);
                     screenModel.getLoginPop().hide();
                     userHolder.setCurrentUser(success.getUserModel());
                     screenModel.getCurrentUser().setText(success.getUserModel().getUsername());
                     screenModel.getLogBox().logMessage("Users ds_loc is: " + success.getUserModel().getDs_loc());
-                    handler.handleEvent("fetchFiles", this.getClass().getName());
+                    handler.handleEvent("fetchFiles");
                     plugger.setUser(success.getUserModel());
                 } else {
                     screenModel.getLogBox().logMessage("Error username or password incorrect");

@@ -13,6 +13,11 @@ public class EnvelopeImpl implements Envelope, Serializable
     private String rotaLoadName = "";
     private List<String> rotaFileNames;
     private boolean userGreenlight;
+    private String groupName = "";
+    private boolean created = false;
+    private String searchPrefix = "";
+    private List<String> groupFileNames;
+    private String chosenGroupName = "";
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -88,5 +93,63 @@ public class EnvelopeImpl implements Envelope, Serializable
         this.userGreenlight = userGreenlight;
     }
 
+    @Override
+    public void setGroupName(String groupName)
+    {
+        this.groupName = groupName;
+    }
 
+    @Override
+    public String getGroupName()
+    {
+        return groupName;
+    }
+
+    @Override
+    public void setCreated(boolean created)
+    {
+        this.created = created;
+    }
+
+    @Override
+    public boolean getCreated()
+    {
+        return created;
+    }
+
+    @Override
+    public void setSearchPrefix(String searchPrefix)
+    {
+        this.searchPrefix = searchPrefix;
+    }
+
+    @Override
+    public String getSearchPrefix()
+    {
+        return searchPrefix;
+    }
+
+    @Override
+    public List<String> getGroupFileNames()
+    {
+        return groupFileNames;
+    }
+
+    @Override
+    public void setGroupFileNames(List<String> groupFileNames)
+    {
+        this.groupFileNames = groupFileNames;
+    }
+
+    @Override
+    public String getChosenGroupName()
+    {
+        return chosenGroupName;
+    }
+
+    @Override
+    public void setChosenGroupName(String chosenGroupName)
+    {
+        this.chosenGroupName = chosenGroupName;
+    }
 }

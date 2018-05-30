@@ -2,6 +2,7 @@ package com.scobmyster.copperorange.client;
 
 import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.client.ui.DockPanel;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.scobmyster.copperorange.client.widgets.*;
@@ -38,6 +39,19 @@ public class ScreenModelImpl implements ScreenModel
     private Label loginErrorLabel;
     private SplitLayoutPanel mainPanel;
     private Label currentUser;
+    private HorizontalPanel hp;
+    private OrangeTextbox groupName;
+    private OrangeButton bt_RegisterGroup;
+    private OrangeButton bt_CancelRegisterGroup;
+    private OrangePopupPanel pop_GroupRegister;
+    private OrangePopupPanel pop_FindGroup;
+    private OrangeButton bt_SearchForGroups;
+    private OrangeButton bt_CancelFindGroup;
+    private OrangeTextbox groupSearchBox;
+    private OrangeButton bt_JoinGroup;
+    private String selectedGroupToLoad;
+    private CellList<String> groupNames;
+
 
     /*
         -------Getters & Setters--------
@@ -240,6 +254,126 @@ public class ScreenModelImpl implements ScreenModel
 
     public void setSaveCancelButton(OrangeButton saveCancelButton) {
         this.saveCancelButton = saveCancelButton;
+    }
+
+    public HorizontalPanel getHp()
+    {
+        return hp;
+    }
+
+    public void setHp(HorizontalPanel hp)
+    {
+        this.hp = hp;
+    }
+
+    public OrangeTextbox getGroupName()
+    {
+        return groupName;
+    }
+
+    public void setGroupName(OrangeTextbox groupName)
+    {
+        this.groupName = groupName;
+    }
+
+    public OrangeButton getBt_RegisterGroup()
+    {
+        return bt_RegisterGroup;
+    }
+
+    public void setBt_RegisterGroup(OrangeButton bt_RegisterGroup)
+    {
+        this.bt_RegisterGroup = bt_RegisterGroup;
+    }
+
+    public OrangeButton getBt_CancelRegisterGroup()
+    {
+        return bt_CancelRegisterGroup;
+    }
+
+    public void setBt_CancelRegisterGroup(OrangeButton bt_CancelRegisterGroup)
+    {
+        this.bt_CancelRegisterGroup = bt_CancelRegisterGroup;
+    }
+
+    public OrangePopupPanel getPop_GroupRegister()
+    {
+        return pop_GroupRegister;
+    }
+
+    public void setPop_GroupRegister(OrangePopupPanel pop_GroupRegister)
+    {
+        this.pop_GroupRegister = pop_GroupRegister;
+    }
+
+    public OrangePopupPanel getPop_FindGroup()
+    {
+        return pop_FindGroup;
+    }
+
+    public void setPop_FindGroup(OrangePopupPanel pop_FindGroup)
+    {
+        this.pop_FindGroup = pop_FindGroup;
+    }
+
+    public OrangeButton getBt_SearchForGroups()
+    {
+        return bt_SearchForGroups;
+    }
+
+    public void setBt_SearchForGroups(OrangeButton bt_SearchForGroups)
+    {
+        this.bt_SearchForGroups = bt_SearchForGroups;
+    }
+
+    public OrangeButton getBt_CancelFindGroup()
+    {
+        return bt_CancelFindGroup;
+    }
+
+    public void setBt_CancelFindGroup(OrangeButton bt_CancelFindGroup)
+    {
+        this.bt_CancelFindGroup = bt_CancelFindGroup;
+    }
+
+    public OrangeTextbox getGroupSearchBox()
+    {
+        return groupSearchBox;
+    }
+
+    public void setGroupSearchBox(OrangeTextbox groupSearchBox)
+    {
+        this.groupSearchBox = groupSearchBox;
+    }
+
+    public OrangeButton getBt_JoinGroup()
+    {
+        return bt_JoinGroup;
+    }
+
+    public void setBt_JoinGroup(OrangeButton bt_JoinGroup)
+    {
+        this.bt_JoinGroup = bt_JoinGroup;
+    }
+
+    public String getSelectedGroupToLoad()
+    {
+        return selectedGroupToLoad;
+    }
+
+    public void setSelectedGroupToLoad(String selectedGroupToLoad)
+    {
+        this.selectedGroupToLoad = selectedGroupToLoad;
+    }
+
+    public CellList<String> getGroupNames()
+    {
+        return groupNames;
+    }
+
+    public void setGroupNames(CellList<String> groupNames)
+    {
+        this.groupNames = groupNames;
     }
 }
 

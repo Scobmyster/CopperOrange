@@ -19,5 +19,15 @@ public interface Envelope
     void setUserModel(User userModel);
     boolean getUserGreenlight();
     void setUserGreenlight(boolean userGreenlight);
+    void setGroupName(String name);
+    String getGroupName();
+    void setCreated(boolean created);
+    boolean getCreated();
+    void setSearchPrefix(String searchPrefix);
+    String getSearchPrefix();
+    List<String> getGroupFileNames();
+    void setGroupFileNames(List<String> groupFileNames);
+    String getChosenGroupName();
+    void setChosenGroupName(String chosenGroupName);
 
 }

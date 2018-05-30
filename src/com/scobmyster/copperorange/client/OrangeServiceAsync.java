@@ -13,4 +13,7 @@ public interface OrangeServiceAsync
     void fetchFileNames(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void login(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void register(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void registerGroup(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void fetchGroupNames(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void joinGroup(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
 }

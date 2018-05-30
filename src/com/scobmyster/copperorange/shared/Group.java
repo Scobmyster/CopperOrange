@@ -13,7 +13,7 @@ public class Group implements Serializable
 
     private String groupName = "";
     private String ds_loc = "";
-    private String[] groupUsers;
+    private String[] groupUsers = new String[]{};
 
     public String getGroupName()
     {
