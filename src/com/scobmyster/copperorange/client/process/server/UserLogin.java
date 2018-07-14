@@ -38,8 +38,9 @@ public class UserLogin implements ProcessModel {
                     userHolder.setCurrentUser(success.getUserModel());
                     screenModel.getCurrentUser().setText(success.getUserModel().getUsername());
                     screenModel.getLogBox().logMessage("Users ds_loc is: " + success.getUserModel().getDs_loc());
-                    handler.handleEvent("fetchFiles");
                     plugger.setUser(success.getUserModel());
+                    handler.handleEvent("fetchFiles");
+                    handler.handleEvent("userSetupService");
                 } else {
                     screenModel.getLogBox().logMessage("Error username or password incorrect");
                     screenModel.getLoginErrorLabel().setVisible(true);

@@ -24,7 +24,9 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     @Override
     public Envelope saveRota(Envelope envelope) throws IllegalArgumentException
     {
-        new Saver().save(envelope);
+        Saver saver = new Saver();
+        saver.setGroupManager(groupManager);
+        saver.save(envelope);
         return envelope;
     }
 
@@ -38,7 +40,9 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     @Override
     public Envelope fetchFileNames(Envelope envelope) throws IllegalArgumentException
     {
-        new Loader().populateList(envelope);
+        Loader loader = new Loader();
+        loader.setGroupManager(groupManager);
+        loader.populateList(envelope);
         return envelope;
     }
 
@@ -62,6 +66,7 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     public Envelope registerGroup(Envelope envelope) throws IllegalArgumentException
     {
         System.out.println("Registering new group");
+        groupManager.setUserManager(userManager);
         groupManager.RegisterGroup(envelope);
         return envelope;
     }
@@ -79,6 +84,29 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     {
         System.out.println("Joining group with the name: " + envelope.getGroupName() + " /// with user: " + envelope.getUserModel().getUsername());
         groupManager.AddUserToGroup(envelope);
-        return null;
+        return envelope;
+    }
+
+    @Override
+    public Envelope userSetupService(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Running user setup service for user: " + envelope.getUserModel().getUsername());
+        envelope.setGroup(groupManager.GetGroupFromName(envelope.getUserModel().FindGroupByID(0)));
+        return envelope;
+    }
+
+    @Override
+    public Envelope groupFetchMyGroups(Envelope envelope) throws IllegalArgumentException
+    {
+        System.out.println("Fetching the list of this users groups");
+        envelope.setMyGroupNames(groupManager.GrabMyGroups(envelope));
+        return envelope;
+    }
+
+    @Override
+    public Envelope groupSwitch(Envelope envelope) throws IllegalArgumentException
+    {
+        envelope.setGroup(groupManager.GetGroupFromName(envelope.getGroupName()));
+        return envelope;
     }
 }

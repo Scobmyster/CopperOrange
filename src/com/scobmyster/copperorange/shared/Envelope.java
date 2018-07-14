@@ -29,5 +29,13 @@ public interface Envelope
     void setGroupFileNames(List<String> groupFileNames);
     String getChosenGroupName();
     void setChosenGroupName(String chosenGroupName);
+    String getSearchMode();
+    void setSearchMode(String mode);
+    boolean getSaveForGroup();
+    void setSaveForGroup(boolean saveForGroup);
+    Group getGroup();
+    void setGroup(Group group);
+    List<String> getMyGroupNames();
+    void setMyGroupNames(List<String> myGroupNames);
 
 }

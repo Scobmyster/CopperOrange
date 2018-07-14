@@ -51,6 +51,17 @@ public class ScreenModelImpl implements ScreenModel
     private OrangeButton bt_JoinGroup;
     private String selectedGroupToLoad;
     private CellList<String> groupNames;
+    private OrangeCheckbox ck_SearchAllRotas;
+    private OrangeCheckbox ck_SearchUserRotas;
+    private OrangeCheckbox ck_SearchGroupRotas;
+    private OrangeCheckbox ck_SaveForUser;
+    private OrangeCheckbox ck_SaveForGroup;
+    private Label currentGroup;
+    private String selectedGroupToSwitch;
+    private CellList<String> myGroups;
+    private OrangeButton bt_switch;
+    private OrangeButton bt_switchCancel;
+    private OrangePopupPanel pop_SwitchGroup;
 
 
     /*
@@ -374,6 +385,106 @@ public class ScreenModelImpl implements ScreenModel
     public void setGroupNames(CellList<String> groupNames)
     {
         this.groupNames = groupNames;
+    }
+
+    public OrangeCheckbox getCk_SearchAllRotas()
+    {
+        return ck_SearchAllRotas;
+    }
+
+    public OrangeCheckbox getCk_SearchUserRotas()
+    {
+        return ck_SearchUserRotas;
+    }
+
+    public OrangeCheckbox getCk_SearchGroupRotas()
+    {
+        return ck_SearchGroupRotas;
+    }
+
+    public void setCk_SearchAllRotas(OrangeCheckbox ck_SearchAllRotas)
+    {
+        this.ck_SearchAllRotas = ck_SearchAllRotas;
+    }
+
+    public void setCk_SearchUserRotas(OrangeCheckbox ck_SearchUserRotas)
+    {
+        this.ck_SearchUserRotas = ck_SearchUserRotas;
+    }
+
+    public void setCk_SearchGroupRotas(OrangeCheckbox ck_SearchGroupRotas)
+    {
+        this.ck_SearchGroupRotas = ck_SearchGroupRotas;
+    }
+
+    public OrangeCheckbox getCk_SaveForGroup()
+    {
+        return ck_SaveForGroup;
+    }
+
+    public void setCk_SaveForGroup(OrangeCheckbox ck_SaveForGroup)
+    {
+        this.ck_SaveForGroup = ck_SaveForGroup;
+    }
+
+    public Label getCurrentGroup()
+    {
+        return currentGroup;
+    }
+
+    public void setCurrentGroup(Label currentGroup)
+    {
+        this.currentGroup = currentGroup;
+    }
+
+    public String getSelectedGroupToSwitch()
+    {
+        return selectedGroupToSwitch;
+    }
+
+    public void setSelectedGroupToSwitch(String selectedGroupToSwitch)
+    {
+        this.selectedGroupToSwitch = selectedGroupToSwitch;
+    }
+
+    public CellList<String> getMyGroups()
+    {
+        return myGroups;
+    }
+
+    public void setMyGroups(CellList<String> myGroups)
+    {
+        this.myGroups = myGroups;
+    }
+
+    public OrangeButton getBt_switch()
+    {
+        return bt_switch;
+    }
+
+    public void setBt_switch(OrangeButton bt_switch)
+    {
+        this.bt_switch = bt_switch;
+    }
+
+    public OrangeButton getBt_switchCancel()
+    {
+        return bt_switchCancel;
+    }
+
+    public void setBt_switchCancel(OrangeButton bt_switchCancel)
+    {
+        this.bt_switchCancel = bt_switchCancel;
+    }
+
+    public OrangePopupPanel getPop_SwitchGroup()
+    {
+        return pop_SwitchGroup;
+    }
+
+    public void setPop_SwitchGroup(OrangePopupPanel pop_SwitchGroup)
+    {
+        this.pop_SwitchGroup = pop_SwitchGroup;
     }
 }
 

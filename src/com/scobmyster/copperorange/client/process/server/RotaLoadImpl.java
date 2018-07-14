@@ -27,6 +27,7 @@ public class RotaLoadImpl implements ProcessModel
         envelope.setAddress("loadRota");
         envelope.setRotaLoadName(screenModel.getSelectedFileToLoad());
         envelope.setUserModel(holder.getCurrentUser());
+        envelope.setGroup(holder.getCurrentGroup());
         handler.handleEvent(screenModel.getNewButton().getEventID());
         service.loadRota(envelope, new AsyncCallback<Envelope>() {
             @Override

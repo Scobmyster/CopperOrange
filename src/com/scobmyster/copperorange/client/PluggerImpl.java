@@ -62,15 +62,24 @@ public class PluggerImpl
         buttonPanel.add(loadButton);
 
         Label username = new Label(userHolder.getCurrentUser().getUsername());
+        username.addMouseListener(new ToolTipListener("Link Me", 5000, ""));
         screenModel.setCurrentUser(username);
+
+
+        Label currentGroup = new Label("Current Group: " + userHolder.getCurrentGroup().getGroupName());
+        screenModel.setCurrentGroup(currentGroup);
+
 
         final OrangeButton CreateGroupButton = new OrangeButton("CreateGroupButton", handler, "Create Group", className);
         final OrangeButton FindGroupButton = new OrangeButton("FindGroupButton", handler, "Find Group", className);
+        final OrangeButton SwitchGroupButton = new OrangeButton("SwitchGroupButton", handler, "Switch Group", className);
 
         VerticalPanel userPanel = new VerticalPanel();
         userPanel.add(username);
+        userPanel.add(currentGroup);
         userPanel.add(CreateGroupButton);
         userPanel.add(FindGroupButton);
+        userPanel.add(SwitchGroupButton);
 
         //SAVE POPUP------------------------------------------------------------------------------------------
         OrangePopupPanel pop_save = pop_builder.buildSavePopup("Enter name to save rota as: ", handler, screenModel);
@@ -93,6 +102,11 @@ public class PluggerImpl
 
         //GROUP JOIN POPUP-------------------------------------------------------------------------
         OrangePopupPanel pop_GroupJoin = pop_builder.buildFindGroupPopup("Find Group", handler, screenModel);
+
+        //GROUP SWITCH POPUP
+        OrangePopupPanel pop_GroupSwitch = pop_builder.buildSwitchGroupPopup("Switch Group", handler, screenModel);
+        screenModel.setPop_SwitchGroup(pop_GroupSwitch);
+
 
         //CLIENT EVENT STUFF----------------------------------------------------------
         RotaAddRowImpl rotaAddRow = new RotaAddRowImpl();
@@ -134,6 +148,13 @@ public class PluggerImpl
 
         GroupCloseFindPrompt groupCloseFindPrompt = new GroupCloseFindPrompt();
         groupCloseFindPrompt.setScreenModel(screenModel);
+
+        GroupOpenSwitchPrompt groupOpenSwitchPrompt = new GroupOpenSwitchPrompt();
+        groupOpenSwitchPrompt.setScreenModel(screenModel);
+        groupOpenSwitchPrompt.setHandler(handler);
+
+        GroupCloseSwitchPrompt groupCloseSwitchPrompt = new GroupCloseSwitchPrompt();
+        groupCloseSwitchPrompt.setScreenModel(screenModel);
         //--------------------------------------------------------------------------
 
         //SERVER EVENT STUFF---------------------------------------------------------
@@ -179,8 +200,22 @@ public class PluggerImpl
         groupJoinGroup.setHolder(userHolder);
         groupJoinGroup.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
 
-        DebugButton debugButton = new DebugButton();
+        UserSetupService userSetupService = new UserSetupService();
+        userSetupService.setScreenModel(screenModel);
+        userSetupService.setHolder(userHolder);
+        userSetupService.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
 
+        GroupFetchMyGroups groupFetchMyGroups = new GroupFetchMyGroups();
+        groupFetchMyGroups.setScreenModel(screenModel);
+        groupFetchMyGroups.setHolder(userHolder);
+        groupFetchMyGroups.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        GroupSwitch groupSwitch = new GroupSwitch();
+        groupSwitch.setScreenModel(screenModel);
+        groupSwitch.setHolder(userHolder);
+        groupSwitch.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        DebugButton debugButton = new DebugButton();
         //-------------------------------
 
         //------------------------------------------------------------------------------
@@ -199,6 +234,7 @@ public class PluggerImpl
         mapOfProcesses.put(screenModel.getLoadCancelButton().getEventID(), (ProcessModel) rotaCancelLoadRota);
         mapOfProcesses.put("fetchFiles", (ProcessModel) rotaFetchNames);
         mapOfProcesses.put("loginPrompt", (ProcessModel) rotaLoginPrompt);
+        mapOfProcesses.put("userSetupService", (ProcessModel) userSetupService);
         
         mapOfProcesses.put(CreateGroupButton.getEventID(), (ProcessModel) groupOpenRegisterPrompt);
         mapOfProcesses.put(screenModel.getBt_RegisterGroup().getEventID(), (ProcessModel) groupRegister);
@@ -207,6 +243,10 @@ public class PluggerImpl
         mapOfProcesses.put(screenModel.getBt_CancelFindGroup().getEventID(), (ProcessModel) groupCloseFindPrompt);
         mapOfProcesses.put(screenModel.getBt_SearchForGroups().getEventID(), (ProcessModel) groupFetchNames);
         mapOfProcesses.put(screenModel.getBt_JoinGroup().getEventID(), (ProcessModel) groupJoinGroup);
+        mapOfProcesses.put(SwitchGroupButton.getEventID(), (ProcessModel) groupOpenSwitchPrompt);
+        mapOfProcesses.put(screenModel.getBt_switch().getEventID(), (ProcessModel) groupSwitch);
+        mapOfProcesses.put(screenModel.getBt_switchCancel().getEventID(), (ProcessModel) groupCloseSwitchPrompt);
+        mapOfProcesses.put("fetchMyGroups", (ProcessModel) groupFetchMyGroups);
 
         mapOfProcesses.put(screenModel.getLoginButton().getEventID(), (ProcessModel) userLogin);
         mapOfProcesses.put(screenModel.getRegisterButton().getEventID(), (ProcessModel) userRegister);

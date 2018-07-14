@@ -37,7 +37,7 @@ public class GroupRegister implements ProcessModel
             {
                 if(envelope.getCreated())
                 {
-                    holder.getCurrentUser().setGroupName(envelope.getGroupName());
+                    holder.getCurrentUser().AddToMyGroups(envelope.getGroupName());
                     screenModel.getPop_GroupRegister().hide();
                 }
                 else

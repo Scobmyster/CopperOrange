@@ -58,6 +58,11 @@ public class PopupBuilder
         });
         screenModel.setRotaNames(rotaNames);
 
+
+
+
+
+
         VerticalPanel vp_content = new VerticalPanel();
         HorizontalPanel hp_button = new HorizontalPanel();
         vp_content.add(lb_explain);
@@ -85,6 +90,14 @@ public class PopupBuilder
         OrangeTextbox saveNameBox = new OrangeTextbox("saveNameBox");
         screenModel.setSaveNameBox(saveNameBox);
 
+
+        final OrangeCheckbox ck_SaveForGroup = new OrangeCheckbox("ck_SaveForGroup");
+        ck_SaveForGroup.setText("Avaliable For Group");
+        screenModel.setCk_SaveForGroup(ck_SaveForGroup);
+
+        HorizontalPanel checkPanel = new HorizontalPanel();
+        checkPanel.add(ck_SaveForGroup);
+
         final OrangeButton bt_saveName = new OrangeButton("bt_saveName", handler, "Save Rota", className);
         screenModel.setSaveRotaButton(bt_saveName);
 
@@ -95,6 +108,7 @@ public class PopupBuilder
         HorizontalPanel savePopHP = new HorizontalPanel();
         savePopVP.add(saveLabel);
         savePopVP.add(saveNameBox);
+        savePopVP.add(checkPanel);
         savePopVP.add(savePopHP);
         savePopHP.add(bt_saveName);
         savePopHP.add(bt_saveCancel);
@@ -229,6 +243,8 @@ public class PopupBuilder
         OrangeTextbox groupSearchBox = new OrangeTextbox("groupSearchBox");
         screenModel.setGroupSearchBox(groupSearchBox);
 
+
+
         OrangeButton bt_SearchForGroups = new OrangeButton("bt_SearchForGroups", handler, "Search", className);
         screenModel.setBt_SearchForGroups(bt_SearchForGroups);
 
@@ -257,6 +273,58 @@ public class PopupBuilder
         screenModel.setPop_FindGroup(pop_FindGroup);
 
         return pop_FindGroup;
+    }
+
+    public OrangePopupPanel buildSwitchGroupPopup(String explainText, ClientSideHandler clientSideHandler, ScreenModelImpl screenModelImpl)
+    {
+        ClientSideHandler handler = clientSideHandler;
+        final ScreenModelImpl screenModel = screenModelImpl;
+
+        Label title = new Label(explainText);
+
+        Label lb_findGroup = new Label("My Groups");
+
+        TextCell textCell = new TextCell();
+        final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
+        CellList<String> myGroups = new CellList<String>(textCell);
+        myGroups.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.ENABLED);
+        myGroups.addStyleName("customCellList");
+        myGroups.setSelectionModel(selectionModel);
+        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+            @Override
+            public void onSelectionChange(SelectionChangeEvent selectionChangeEvent)
+            {
+                String selected = selectionModel.getSelectedObject();
+                if(selected != null)
+                {
+                    screenModel.setSelectedGroupToSwitch(selected);
+                }
+            }
+        });
+        screenModel.setMyGroups(myGroups);
+
+        OrangeButton bt_switch = new OrangeButton("bt_switch", handler, "Switch", className);
+        screenModel.setBt_switch(bt_switch);
+
+        OrangeButton bt_switchCancel = new OrangeButton("bt_cancel", handler, "Cancel", className);
+        screenModel.setBt_switchCancel(bt_switchCancel);
+
+        HorizontalPanel buttonPanel = new HorizontalPanel();
+        buttonPanel.add(bt_switch);
+        buttonPanel.add(bt_switchCancel);
+
+        VerticalPanel mainPanel = new VerticalPanel();
+        mainPanel.add(title);
+        mainPanel.add(lb_findGroup);
+        mainPanel.add(myGroups);
+        mainPanel.add(buttonPanel);
+
+
+        OrangePopupPanel pop_SwitchGroup = new OrangePopupPanel("pop_SwitchGroup", false, "1024");
+        pop_SwitchGroup.add(mainPanel);
+        screenModel.setPop_SwitchGroup(pop_SwitchGroup);
+
+        return pop_SwitchGroup;
     }
 
     public void setLogBox(OrangeLoggingBox logbox)

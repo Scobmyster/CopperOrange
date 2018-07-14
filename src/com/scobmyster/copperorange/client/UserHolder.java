@@ -19,7 +19,7 @@ public class UserHolder
         this.currentUser = currentUser;
     }
 
-    private Group getCurrentGroup()
+    public Group getCurrentGroup()
     {
         return currentGroup;
     }

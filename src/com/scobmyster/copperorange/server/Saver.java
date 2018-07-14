@@ -17,6 +17,10 @@ import java.util.Date;
 
 public class Saver {
 
+    private GroupManager g_manager;
+    private String path;
+    private String datastore;
+
     public Envelope save(Envelope envelope)
     {
         System.out.println("Saver.save: START");
@@ -26,12 +30,22 @@ public class Saver {
         String dateToStr = dateFormat.format(date);
 
         String naming = envelope.getFileSaveName();
-        String path = envelope.getUserModel().getDs_loc() + naming + ".xml";
+
 
 
             System.out.println("Saver.save: Checking for datastore");
-            if (!new File(envelope.getUserModel().getDs_loc()).exists())
-                createDatastore(envelope.getUserModel().getDs_loc());
+            if(envelope.getSaveForGroup())
+            {
+                path = g_manager.GetGroupFromName(envelope.getGroupName()).getDs_loc() + naming + ".xml";
+                datastore = g_manager.GetGroupFromName(envelope.getGroupName()).getDs_loc();
+            }
+            else
+            {
+                path = envelope.getUserModel().getDs_loc() + naming + ".xml";
+                datastore = envelope.getUserModel().getDs_loc();
+            }
+            if (!new File(datastore).exists())
+                createDatastore(datastore);
             File file = new File(path);
             if (file.exists())
             {
@@ -110,6 +124,11 @@ public class Saver {
     private void createDatastore(String path)
     {
         System.out.println("Saver.createDatastore: Datastore creation : " + new File(path).mkdir());
+    }
+
+    public void setGroupManager(GroupManager g_manager)
+    {
+        this.g_manager = g_manager;
     }
 
 

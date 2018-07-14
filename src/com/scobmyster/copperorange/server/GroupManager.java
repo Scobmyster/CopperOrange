@@ -1,24 +1,19 @@
 package com.scobmyster.copperorange.server;
 
-import com.scobmyster.copperorange.shared.Envelope;
-import com.scobmyster.copperorange.shared.Group;
-import com.scobmyster.copperorange.shared.User;
+import com.scobmyster.copperorange.shared.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class GroupManager
 {
 
     private List<Group> groupBase = new ArrayList<Group>();
+    private UserManager userManager;
 
     public void RegisterGroup(Envelope envelope)
     {
@@ -32,14 +27,26 @@ public class GroupManager
 
         if (GroupValid(name))
         {
+            //Set group details
             System.out.println("Registering the group");
             Group group = new Group();
             String regPath = ("C:/gwt-2.8.1/CopperOrange/groups/" + name + ".xml");
             group.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + name + "/");
             group.setGroupName(name);
+            //Make user admin
             List<String> groupUser = new ArrayList<>();
             groupUser.add(user.getUsername());
             group.setGroupUsers(groupUser.toArray(new String[groupUser.size()]));
+            GroupRoles roles = new GroupRoles();
+            Admin admins = new Admin();
+            List<String> copyOfAdmins = new LinkedList<>(Arrays.asList(admins.getAdmins()));
+            copyOfAdmins.add(user.getUsername());
+            admins.setAdmins(copyOfAdmins.toArray(new String[copyOfAdmins.size()]));
+            roles.setAdmins(admins);
+            group.setRolesOfThisGroup(roles);
+            //Update user profile to know it is in this new group
+            user.AddToMyGroups(name);
+            userManager.SaveUserChanges(user);
             System.out.println("User name is: " + user.getUsername());
             System.out.println("Creation user for the group is: " + group.getGroupUsers()[0]);
             System.out.println("List user is: " + groupUser.get(0));
@@ -124,7 +131,7 @@ public class GroupManager
         List<String> groupUsers = new LinkedList<>(Arrays.asList(group.getGroupUsers()));
         for(String username : groupUsers)
         {
-            if(username.equals(groupUsers))
+            if(user.getUsername().equals(username))
             {
                 System.out.println("ERROR IN ADDUSERTOGROUP: The server is attempting to add a user to a group which already has that user listed the user is " + username + " and the group in question" +
                         " is " + groupName);
@@ -133,6 +140,14 @@ public class GroupManager
         }
         groupUsers.add(user.getUsername());
         group.setGroupUsers(groupUsers.toArray(new String[groupUsers.size()]));
+
+        GroupRoles roles = group.getRolesOfThisGroup();
+        Member members = roles.getMembers();
+        List<String> copyOfMembers = new LinkedList<>(Arrays.asList(members.getMembers()));
+        copyOfMembers.add(user.getUsername());
+        members.setMembers(copyOfMembers.toArray(new String[copyOfMembers.size()]));
+        roles.setMembers(members);
+        group.setRolesOfThisGroup(roles);
         WriteChangesToGroupFile(group);
     }
 
@@ -181,6 +196,8 @@ public class GroupManager
         PopulateGroupBase();
         for(Group group : groupBase)
         {
+            System.out.println("Group: " + group.getGroupName());
+            System.out.println("My Group Name: " + groupName);
             if(group.getGroupName().equals(groupName))
             {
                 return group;
@@ -191,8 +208,20 @@ public class GroupManager
         return null;
     }
 
+    public List<String> GrabMyGroups(Envelope envelope)
+    {
+        User user = envelope.getUserModel();
+        List<String> groups = Arrays.asList(user.getMyGroups());
+        return groups;
+    }
+
     public String stripOffFileExtension(String fileName)
     {
         return fileName.replaceAll(".xml", "");
+    }
+
+    public void setUserManager(UserManager userManager)
+    {
+        this.userManager = userManager;
     }
 }

@@ -16,4 +16,7 @@ public interface OrangeServiceAsync
     void registerGroup(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void fetchGroupNames(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
     void joinGroup(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void userSetupService(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void groupFetchMyGroups(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
+    void groupSwitch(Envelope envelope, AsyncCallback<Envelope> callback) throws IllegalArgumentException;
 }

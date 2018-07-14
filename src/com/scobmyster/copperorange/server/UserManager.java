@@ -22,8 +22,17 @@ public class UserManager
     {
         userModel = envelope.getUserModel();
         populateUserBase();
-        envelope.setUserGreenlight(checkUserValid(userModel));
-        envelope.setUserModel(userModel);
+        if(checkUserValid(userModel))
+        {
+            envelope.setUserGreenlight(true);
+            userModel = LoadUserProfile(envelope);
+            envelope.setUserModel(userModel);
+        }
+        else
+        {
+            envelope.setUserGreenlight(false);
+        }
+
         return envelope;
     }
 
@@ -113,6 +122,27 @@ public class UserManager
         }
     }
 
+    public void SaveUserChanges(User user)
+    {
+        System.out.println("Saving changes to user profile");
+        String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + user.getUsername() + ".xml");
+        try
+        {
+            File file = new File(regPath);
+            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            System.out.println("Saving to: " + file.getAbsolutePath());
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            jaxbMarshaller.marshal(user, file);
+            jaxbMarshaller.marshal(user, System.out);
+        }
+        catch (JAXBException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public boolean checkUserCanRegister(User userModel)
     {
         boolean registerValid = false;
@@ -130,6 +160,28 @@ public class UserManager
             }
         }
         return registerValid;
+    }
+
+    public User LoadUserProfile(Envelope envelope)
+    {
+        User user = new User();
+        String username = envelope.getUserModel().getUsername();
+        System.out.println("Loading up profile: " + username);
+        try
+        {
+            File file = new File("C:/gwt-2.8.1/CopperOrange/users/" + username + ".xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            user = (User) jaxbUnmarshaller.unmarshal(file);
+        }
+        catch(JAXBException e)
+        {
+            e.printStackTrace();
+            e.getMessage();
+        }
+
+        return user;
     }
 }
 

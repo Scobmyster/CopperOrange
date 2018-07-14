@@ -18,6 +18,10 @@ public class EnvelopeImpl implements Envelope, Serializable
     private String searchPrefix = "";
     private List<String> groupFileNames;
     private String chosenGroupName = "";
+    private String searchMode = "";
+    private boolean saveForGroup = false;
+    private Group group;
+    private List<String> myGroupNames;
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -151,5 +155,53 @@ public class EnvelopeImpl implements Envelope, Serializable
     public void setChosenGroupName(String chosenGroupName)
     {
         this.chosenGroupName = chosenGroupName;
+    }
+
+    @Override
+    public String getSearchMode()
+    {
+        return searchMode;
+    }
+
+    @Override
+    public void setSearchMode(String searchMode)
+    {
+        this.searchMode = searchMode;
+    }
+
+    @Override
+    public boolean getSaveForGroup()
+    {
+        return saveForGroup;
+    }
+
+    @Override
+    public void setSaveForGroup(boolean saveForGroup)
+    {
+        this.saveForGroup = saveForGroup;
+    }
+
+    @Override
+    public Group getGroup()
+    {
+        return group;
+    }
+
+    @Override
+    public void setGroup(Group group)
+    {
+        this.group = group;
+    }
+
+    @Override
+    public List<String> getMyGroupNames()
+    {
+        return myGroupNames;
+    }
+
+    @Override
+    public void setMyGroupNames(List<String> myGroupNames)
+    {
+        this.myGroupNames = myGroupNames;
     }
 }

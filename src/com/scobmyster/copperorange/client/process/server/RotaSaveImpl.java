@@ -18,6 +18,8 @@ public class RotaSaveImpl implements ProcessModel {
     private UserHolder holder;
 
 
+
+
     @Override
     public void runProcess()
     {
@@ -29,6 +31,13 @@ public class RotaSaveImpl implements ProcessModel {
         envelope.setAddress("saveRota");
         envelope.setFileSaveName(screenModel.getSaveNameBox().getText());
         envelope.setUserModel(holder.getCurrentUser());
+        if(screenModel.getCk_SaveForGroup().isChecked())
+        {
+            envelope.setSaveForGroup(true);
+            envelope.setGroupName(holder.getCurrentGroup().getGroupName());
+        }
+        else
+            envelope.setSaveForGroup(false);
         screenModel.getSavePop().setVisible(false);
         service.saveRota(envelope, new AsyncCallback<Envelope>() {
             @Override
