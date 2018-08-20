@@ -2,6 +2,7 @@ package com.scobmyster.copperorange.client.process.server;
 
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.scobmyster.copperorange.client.ClientSideHandler;
 import com.scobmyster.copperorange.client.OrangeServiceAsync;
 import com.scobmyster.copperorange.client.ScreenModelImpl;
 import com.scobmyster.copperorange.client.UserHolder;
@@ -15,6 +16,7 @@ public class UserSetupService implements ProcessModel
     private ScreenModelImpl screenModel;
     private OrangeServiceAsync service;
     private UserHolder holder;
+    private ClientSideHandler handler;
 
     @Override
     public void runProcess()
@@ -33,8 +35,12 @@ public class UserSetupService implements ProcessModel
             public void onSuccess(Envelope envelope)
             {
                 holder.setCurrentGroup(envelope.getGroup());
-                screenModel.getCurrentGroup().setText(holder.getCurrentGroup().getGroupName());
-                screenModel.getLogBox().logMessage("Current group is: " + holder.getCurrentGroup().getGroupName());
+                if(holder.getCurrentGroup() != null)
+                {
+                	screenModel.getCurrentGroup().setText(holder.getCurrentGroup().getGroupName());
+                }
+               
+                handler.handleEvent("fetchFiles");
             }
         });
     }
@@ -52,5 +58,10 @@ public class UserSetupService implements ProcessModel
     public void setHolder(UserHolder holder)
     {
         this.holder = holder;
+    }
+    
+    public void setHandler(ClientSideHandler handler)
+    {
+    	this.handler = handler;
     }
 }

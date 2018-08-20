@@ -67,3 +67,8 @@ h1 {
 .rootPanel{
     align-content: center;
 }
+
+.toolTip {
+    background-color: #55e875;
+    color: white;
+}

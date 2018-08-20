@@ -16,6 +16,7 @@ public class Group implements Serializable
 
     private String groupName = "";
     private String ds_loc = "";
+    private String id = "";
     private String[] groupUsers = new String[]{};
     private GroupRoles rolesOfThisGroup = new GroupRoles();
 
@@ -56,5 +57,16 @@ public class Group implements Serializable
     {
         this.rolesOfThisGroup = rolesOfThisGroup;
     }
-
+    
+   public String getID()
+   {
+	   return id;
+   }
+   
+   public void setID(String id)
+   {
+	   this.id = id;
+   }
+   
+  
 }

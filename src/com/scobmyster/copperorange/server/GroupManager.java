@@ -14,6 +14,7 @@ public class GroupManager
 
     private List<Group> groupBase = new ArrayList<Group>();
     private UserManager userManager;
+    private GroupID groupID = new GroupID();
 
     public void RegisterGroup(Envelope envelope)
     {
@@ -30,9 +31,10 @@ public class GroupManager
             //Set group details
             System.out.println("Registering the group");
             Group group = new Group();
-            String regPath = ("C:/gwt-2.8.1/CopperOrange/groups/" + name + ".xml");
-            group.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + name + "/");
+            String regPath = ("C:/gwt-2.8.1/CopperOrange/groups/" + groupID.getId() + ".xml");
+            group.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + groupID.getId() + "/");
             group.setGroupName(name);
+            group.setID(groupID.getId());
             //Make user admin
             List<String> groupUser = new ArrayList<>();
             groupUser.add(user.getUsername());
@@ -154,7 +156,7 @@ public class GroupManager
     public void WriteChangesToGroupFile(Group group)
     {
         System.out.println("Registering the group");
-        String regPath = ("C:/gwt-2.8.1/CopperOrange/groups/" + group.getGroupName() + ".xml");
+        String regPath = ("C:/gwt-2.8.1/CopperOrange/groups/" + group.getID() + ".xml");
         try
         {
             File file = new File(regPath);
@@ -177,18 +179,17 @@ public class GroupManager
         String prefix = envelope.getSearchPrefix();
 
         File[] filesInTargetDirectory = new File("C:/gwt-2.8.1/CopperOrange/groups/").listFiles();
-        List<String> fileNames = new ArrayList<>();
+        List<String> groupResult = new ArrayList<>();
         for (File file : filesInTargetDirectory)
         {
             System.out.println("Reading file: " + file.getName());
-            if(file.getName().contains(prefix))
+            Group group = LoadGroupFromFile(file);
+            if(group.getGroupName().contains(prefix))
             {
-                String cutFileName = stripOffFileExtension(file.getName());
-                System.out.println("Found matched name: " + cutFileName);
-                fileNames.add(cutFileName);
+            	groupResult.add(group.getGroupName());
             }
         }
-        envelope.setGroupFileNames(fileNames);
+        envelope.setGroupFileNames(groupResult);
     }
 
     public Group GetGroupFromName(String groupName)
@@ -218,6 +219,23 @@ public class GroupManager
     public String stripOffFileExtension(String fileName)
     {
         return fileName.replaceAll(".xml", "");
+    }
+    
+    public Group LoadGroupFromFile(File file)
+    {
+    	Group group = new Group();
+    	
+    	 try
+         {
+             JAXBContext jaxbContext = JAXBContext.newInstance(Group.class);
+
+             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+             group = (Group) jaxbUnmarshaller.unmarshal(file);
+         } catch (JAXBException e)
+         {
+             e.printStackTrace();
+         }
+    	 return group;
     }
 
     public void setUserManager(UserManager userManager)

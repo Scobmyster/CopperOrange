@@ -37,5 +37,9 @@ public interface Envelope
     void setGroup(Group group);
     List<String> getMyGroupNames();
     void setMyGroupNames(List<String> myGroupNames);
+    String getRotaLinkName();
+    void setRotaLinkName(String rotaLinkName);
+    String getRotaID();
+    void setRotaID(String rotaID);
 
 }

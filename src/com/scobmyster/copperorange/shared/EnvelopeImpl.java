@@ -22,6 +22,8 @@ public class EnvelopeImpl implements Envelope, Serializable
     private boolean saveForGroup = false;
     private Group group;
     private List<String> myGroupNames;
+    private String rotaLinkName;
+    private String rotaID;
 
     @Override
     public void setRotaModel(Rota rotaModel)
@@ -203,5 +205,29 @@ public class EnvelopeImpl implements Envelope, Serializable
     public void setMyGroupNames(List<String> myGroupNames)
     {
         this.myGroupNames = myGroupNames;
+    }
+
+    @Override
+    public String getRotaLinkName()
+    {
+        return rotaLinkName;
+    }
+
+    @Override
+    public void setRotaLinkName(String rotaLinkName)
+    {
+        this.rotaLinkName = rotaLinkName;
+    }
+
+    @Override
+    public String getRotaID()
+    {
+        return rotaID;
+    }
+
+    @Override
+    public void setRotaID(String rotaID)
+    {
+        this.rotaID = rotaID;
     }
 }

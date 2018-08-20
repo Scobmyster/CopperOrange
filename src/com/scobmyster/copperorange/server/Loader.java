@@ -20,13 +20,12 @@ public class Loader
     public Envelope load(Envelope envelope)
     {
         Rota rota = envelope.getRotaModel();
-        String loadName = envelope.getRotaLoadName();
+        String loadName = envelope.getGroup().getID() + "_" + envelope.getRotaLoadName();
         System.out.println("Loading up rota: " + loadName);
-        if(FileWithinUserDir(loadName, envelope))
-        {
+       
             try
             {
-                File file = new File(envelope.getUserModel().getDs_loc() + "/" + loadName + ".xml");
+                File file = new File(envelope.getGroup().getDs_loc() + loadName);
                 JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -38,30 +37,14 @@ public class Loader
             }
             envelope.setRotaModel(rota);
 
-        }
-        else
-        {
-            try
-            {
-                File file = new File(envelope.getGroup().getDs_loc() + "/" + loadName + ".xml");
-                JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
-
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                rota = (Rota) jaxbUnmarshaller.unmarshal(file);
-            } catch (JAXBException e)
-            {
-                e.printStackTrace();
-                e.getMessage();
-            }
-            envelope.setRotaModel(rota);
-        }
+       
         return envelope;
     }
 
     public Envelope populateList(Envelope envelope)
     {
         System.out.println("Populating list for file names");
-        File[] filesInTargetDirectory = new File(envelope.getUserModel().getDs_loc()).listFiles();
+        File[] filesInTargetDirectory = new File(envelope.getGroup().getDs_loc()).listFiles();
         List<String> fileNames = new ArrayList<>();
         if(filesInTargetDirectory != null)
         {
@@ -70,26 +53,6 @@ public class Loader
                 String cutFileName = stripOffFileExtension(file.getName());
                 fileNames.add(cutFileName);
             }
-        }
-
-        String[] userJoinedGroups = envelope.getUserModel().getMyGroups();
-
-        System.out.println("JOing groups: " + userJoinedGroups.length);
-
-        for(String userGroupName : userJoinedGroups)
-        {
-            System.out.println("Group joined by group name: " + userGroupName);
-            Group group = groupManager.GetGroupFromName(userGroupName);
-            filesInTargetDirectory = new File(group.getDs_loc()).listFiles();
-            if (filesInTargetDirectory != null)
-            {
-                for (File file : filesInTargetDirectory)
-                {
-                    String cutFileName = stripOffFileExtension(file.getName());
-                    fileNames.add(cutFileName);
-                }
-            }
-
         }
 
         envelope.setRotaFileNames(fileNames);
@@ -113,7 +76,8 @@ public class Loader
 
     public String stripOffFileExtension(String fileName)
     {
-        return fileName.replaceAll(".xml", "");
+    	String[] result = fileName.split("_");
+        return result[1];
     }
 
     public void setGroupManager(GroupManager groupManager)

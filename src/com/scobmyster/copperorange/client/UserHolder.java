@@ -8,6 +8,7 @@ public class UserHolder
 
     private User currentUser = new User();
     private Group currentGroup = new Group();
+    private String currentRotaID = "00";
 
     public User getCurrentUser()
     {
@@ -26,5 +27,15 @@ public class UserHolder
 
     public void setCurrentGroup(Group currentGroup) {
         this.currentGroup = currentGroup;
+    }
+
+    public String getCurrentRotaID()
+    {
+        return currentRotaID;
+    }
+
+    public void setCurrentRotaID(String currentRotaID)
+    {
+        this.currentRotaID = currentRotaID;
     }
 }

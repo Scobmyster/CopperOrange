@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <user>
     <ds_loc>C:/gwt-2.8.1/CopperOrange/ds/admin/</ds_loc>
-    <myGroups>AdminTesting</myGroups>
-    <myGroups>fetchgrouptesting</myGroups>
-    <myGroups>fetchgrouptesting2</myGroups>
     <password>password</password>
     <username>admin</username>
 </user>

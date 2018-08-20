@@ -1,0 +1,2 @@
+serviceClass: com.scobmyster.copperorange.client.OrangeService
+path: C54BF0BD2F722CEB4F4754BEA779D78B.gwt.rpc

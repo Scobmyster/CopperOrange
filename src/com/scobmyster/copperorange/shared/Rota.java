@@ -10,7 +10,9 @@ public class Rota implements Serializable {
     private String[] cellText;
     private int[] rowpos;
     private int[] colpos;
-
+    private String rotaID = "";
+    
+    
     public String[] getCellText() {
         return cellText;
     }
@@ -38,5 +40,15 @@ public class Rota implements Serializable {
     public void setColpos(int[] colpos)
     {
         this.colpos = colpos;
+    }
+    
+    public String getRotaID()
+    {
+    	return rotaID;
+    }
+    @XmlElement
+    public void setRotaID(String rotaID)
+    {
+    	this.rotaID = rotaID;
     }
 }

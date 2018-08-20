@@ -40,6 +40,7 @@ public class RotaLoadImpl implements ProcessModel
             public void onSuccess(Envelope envelope)
             {
                 new ModelTranslator().translate(envelope.getRotaModel(), screenModel);
+                holder.setCurrentRotaID(envelope.getRotaModel().getRotaID());
             }
         });
     }

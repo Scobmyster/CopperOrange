@@ -9,8 +9,9 @@ import com.scobmyster.copperorange.shared.Utils;
 
 public class TableBuilder {
 
-    private  Utils util;
     private OrangeLoggingBox logbox;
+    private ClientSideHandler handler;
+    private ScreenModelImpl screenModel;
 
     //5, 4
     public  OrangeFlexTable createTable(int col, int row)
@@ -20,10 +21,13 @@ public class TableBuilder {
         for (int r = 0; r < row; r++) {
             for (int c = 0; c < col; c++) {
                 OrangeTableCell cell = new OrangeTableCell("tCell", r, c);
+                ToolTipListener tip = new ToolTipListener("Link Me", 5000, "toolTip");
+                tip.setHandler(handler);
+                tip.setScreenModel(screenModel);
+                cell.addMouseListener(tip);
                 fTable.setWidget(r, c, cell);
                 fTable.getCellList().add(cell);
                 cellFormatter.setColSpan(r, c, 400);
-                //fTable.getCellFormatter().addStyleName(c, 0, "tablecolumn");
             }
 
         }
@@ -55,7 +59,6 @@ public class TableBuilder {
         int counter = 0;
         OrangeTableCell[] cells = fTable.getCellList().toArray(new OrangeTableCell[0]);
         for(int i = 0; i < cells.length; i++) {
-            //logbox.logMessage("Cell: " + cells[i].getRow() + "," + cells[i].getCol());
             if (cells[i].getRow() == fTable.getTableRowCount()) {
                 fTable.remove(cells[i]);
                 fTable.getCellList().remove(cells[i]);
@@ -73,6 +76,7 @@ public class TableBuilder {
         for(int c = 0; c < fTable.getColumnCount(); c++)
         {
             OrangeTableCell cell = new OrangeTableCell("tCell", fTable.getTableRowCount(), c);
+            cell.addMouseListener(new ToolTipListener("Link Me", 5000, "toolTip"));
             fTable.setWidget(fTable.getTableRowCount(), c, cell);
             fTable.getCellList().add(cell);
             cellFormatter.setColSpan(fTable.getTableRowCount(), c, 400);
@@ -89,6 +93,7 @@ public class TableBuilder {
         for(int i = 0; i < fTable.getCellList().size(); i++)
         {
             fTable.getCellList().get(i).setText("------------");
+            fTable.getCellList().get(i).addMouseListener(new ToolTipListener("Link Me", 5000, "toolTip"));
         }
        logbox.logMessage("New table generated");
     }
@@ -96,5 +101,15 @@ public class TableBuilder {
     public void setLogbox(OrangeLoggingBox logbox)
     {
         this.logbox = logbox;
+    }
+
+    public void setHandler(ClientSideHandler handler)
+    {
+        this.handler = handler;
+    }
+
+    public void setScreenModel(ScreenModelImpl screenModel)
+    {
+        this.screenModel = screenModel;
     }
 }

@@ -62,6 +62,7 @@ public class ScreenModelImpl implements ScreenModel
     private OrangeButton bt_switch;
     private OrangeButton bt_switchCancel;
     private OrangePopupPanel pop_SwitchGroup;
+    private OrangeReturnButton bt_link;
 
 
     /*
@@ -485,6 +486,16 @@ public class ScreenModelImpl implements ScreenModel
     public void setPop_SwitchGroup(OrangePopupPanel pop_SwitchGroup)
     {
         this.pop_SwitchGroup = pop_SwitchGroup;
+    }
+
+    public OrangeReturnButton getBt_Link()
+    {
+        return bt_link;
+    }
+
+    public void setBt_Link(OrangeReturnButton bt_link)
+    {
+        this.bt_link = bt_link;
     }
 }
 

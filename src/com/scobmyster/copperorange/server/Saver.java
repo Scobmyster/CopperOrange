@@ -30,94 +30,90 @@ public class Saver {
         String dateToStr = dateFormat.format(date);
 
         String naming = envelope.getFileSaveName();
-
-
-
-            System.out.println("Saver.save: Checking for datastore");
-            if(envelope.getSaveForGroup())
+        
+        naming = envelope.getGroup().getID() + "_" + naming;
+        		
+        		
+        System.out.println("Saver.save: Checking for datastore");
+        
+        path = g_manager.GetGroupFromName(envelope.getGroup().getGroupName()).getDs_loc() + "/" + naming + ".xml";
+        datastore = g_manager.GetGroupFromName(envelope.getGroup().getGroupName()).getDs_loc();
+        
+        if (!new File(datastore).exists())
+            createDatastore(datastore);
+        File file = new File(path);
+        if (file.exists())
+        {
+            System.out.println("Saver.save: Beginining to copy old file");
+            FileInputStream ins = null;
+            FileOutputStream outs = null;
+            String rewritePath = g_manager.GetGroupFromName(envelope.getGroup().getGroupName()).getDs_loc() + "/" + naming + "(" + dateToStr + ")" + ".xml";
+            File copyFile = new File(rewritePath);
+            try
             {
-                path = g_manager.GetGroupFromName(envelope.getGroupName()).getDs_loc() + naming + ".xml";
-                datastore = g_manager.GetGroupFromName(envelope.getGroupName()).getDs_loc();
-            }
-            else
-            {
-                path = envelope.getUserModel().getDs_loc() + naming + ".xml";
-                datastore = envelope.getUserModel().getDs_loc();
-            }
-            if (!new File(datastore).exists())
-                createDatastore(datastore);
-            File file = new File(path);
-            if (file.exists())
-            {
-                System.out.println("Saver.save: Beginining to copy old file");
-                FileInputStream ins = null;
-                FileOutputStream outs = null;
-                String rewritePath = envelope.getUserModel().getDs_loc() + naming + "(" + dateToStr + ")" + ".xml";
-                File copyFile = new File(rewritePath);
-                try
+                ins = new FileInputStream(file);
+                outs = new FileOutputStream(copyFile);
+                byte[] buffer = new byte[1024];
+                int length;
+
+                while ((length = ins.read(buffer)) > 0)
                 {
-                    ins = new FileInputStream(file);
-                    outs = new FileOutputStream(copyFile);
-                    byte[] buffer = new byte[1024];
-                    int length;
-
-                    while ((length = ins.read(buffer)) > 0)
-                    {
-                        outs.write(buffer, 0, length);
-                    }
-
-                    ins.close();
-                    outs.close();
-                    System.out.println("File copied successfully");
-                    if (new File(path).delete())
-                    {
-                        System.out.println("Deleted file");
-                    }
-                    else
-                    {
-                        System.out.println("Error trying to delete file");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println(e.getMessage());
+                    outs.write(buffer, 0, length);
                 }
 
-                File fileNew = new File(path);
-
-                try
+                ins.close();
+                outs.close();
+                System.out.println("File copied successfully");
+                if (new File(path).delete())
                 {
-                    System.out.println("Saver.save: Saved file to via overwrite: " + fileNew.getAbsolutePath());
-                    JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
-                    Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-                    jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-                    jaxbMarshaller.marshal(envelope.getRotaModel(), fileNew);
-                    jaxbMarshaller.marshal(envelope.getRotaModel(), System.out);
-                } catch (JAXBException jax) {
-                    jax.printStackTrace();
-                    System.out.println(jax.getMessage());
+                    System.out.println("Deleted file");
                 }
-
+                else
+                {
+                    System.out.println("Error trying to delete file");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
-            else
+
+            File fileNew = new File(path);
+
+            try
             {
-                try
-                {
-                    System.out.println("Saver.save: Saved file to via new: " + file.getAbsolutePath());
-                    JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
-                    Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+                System.out.println("Saver.save: Saved file to via overwrite: " + fileNew.getAbsolutePath());
+                JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
+                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
-                    jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-                    jaxbMarshaller.marshal(envelope.getRotaModel(), file);
-                    jaxbMarshaller.marshal(envelope.getRotaModel(), System.out);
-                } catch (JAXBException jax) {
-                    jax.printStackTrace();
-                    System.out.println(jax.getMessage());
-                }
+                jaxbMarshaller.marshal(envelope.getRotaModel(), fileNew);
+                jaxbMarshaller.marshal(envelope.getRotaModel(), System.out);
+            } catch (JAXBException jax) {
+                jax.printStackTrace();
+                System.out.println(jax.getMessage());
             }
 
+        }
+        else
+        {
+            try
+            {
+                System.out.println("Saver.save: Saved file to via new: " + file.getAbsolutePath());
+                JAXBContext jaxbContext = JAXBContext.newInstance(Rota.class);
+                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+                jaxbMarshaller.marshal(envelope.getRotaModel(), file);
+                jaxbMarshaller.marshal(envelope.getRotaModel(), System.out);
+            } catch (JAXBException jax) {
+                jax.printStackTrace();
+                System.out.println(jax.getMessage());
+            }
+        }
+
+        
         return envelope;
     }
 

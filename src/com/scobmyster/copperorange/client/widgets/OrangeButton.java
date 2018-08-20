@@ -37,6 +37,22 @@ public class OrangeButton extends Button
         });
     }
 
+    public OrangeButton(String componentID, ClientSideHandler clientSideHandler, String textForButton)
+    {
+        this.componentID = componentID;
+        handler = clientSideHandler;
+        this.setText(textForButton);
+        this.setEventID(componentID);
+        this.addClickHandler(new ClickHandler()
+        {
+            @Override
+            public void onClick(ClickEvent clickEvent)
+            {
+                handler.handleEvent(getEventID());
+            }
+        });
+    }
+
     public String getComponentID()
     {
         return componentID;

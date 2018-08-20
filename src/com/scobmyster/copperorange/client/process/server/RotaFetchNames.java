@@ -24,6 +24,7 @@ public class RotaFetchNames implements ProcessModel
         screenModel.getLogBox().logMessage("Fetch file names current user is: " + holder.getCurrentUser().getUsername());
         screenModel.getLogBox().logMessage("Current user group: " + holder.getCurrentUser().getMyGroups().length);
         envelope.setUserModel(holder.getCurrentUser());
+        envelope.setGroup(holder.getCurrentGroup());
         service.fetchFileNames(envelope, new AsyncCallback<Envelope>() {
             @Override
             public void onFailure(Throwable throwable)

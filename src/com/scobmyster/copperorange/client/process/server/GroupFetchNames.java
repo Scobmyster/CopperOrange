@@ -18,14 +18,6 @@ public class GroupFetchNames implements ProcessModel
     {
         Envelope envelope = new EnvelopeImpl();
         envelope.setSearchPrefix(screenModel.getGroupSearchBox().getText());
-        if(screenModel.getCk_SearchAllRotas().isChecked())
-            envelope.setSearchMode("All");
-        else if(screenModel.getCk_SearchUserRotas().isChecked())
-            envelope.setSearchMode("Users");
-        else if(screenModel.getCk_SearchGroupRotas().isChecked())
-            envelope.setSearchMode("Group");
-        else
-            envelope.setSearchMode("All");
         service.fetchGroupNames(envelope, new AsyncCallback<Envelope>()
         {
             @Override

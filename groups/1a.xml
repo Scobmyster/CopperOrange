@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+    <groupName>idsecondtest</groupName>
+    <ds_loc>C:/gwt-2.8.1/CopperOrange/ds/1a/</ds_loc>
+    <id>1a</id>
+    <groupUsers></groupUsers>
+    <groupUsers>admin</groupUsers>
+    <rolesOfThisGroup>
+        <members>
+        </members>
+        <admins>
+            <admins>admin</admins>
+        </admins>
+    </rolesOfThisGroup>
+</group>

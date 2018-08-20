@@ -55,6 +55,7 @@ public class ModelTranslator
         for(String text : rota.getCellText())
         {
             OrangeTableCell tCell = new OrangeTableCell("cell", rota.getRowpos()[counter], rota.getColpos()[counter]);
+            tCell.addMouseListener(new ToolTipListener("Link Me", 5000, "toolTip"));
             screenModel.getRotaTable().getCellList().add(tCell);
             tCell.setText(text);
             screenModel.getRotaTable().setWidget(rota.getRowpos()[counter], rota.getColpos()[counter], tCell);

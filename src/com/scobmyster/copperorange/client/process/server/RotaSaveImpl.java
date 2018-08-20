@@ -31,13 +31,7 @@ public class RotaSaveImpl implements ProcessModel {
         envelope.setAddress("saveRota");
         envelope.setFileSaveName(screenModel.getSaveNameBox().getText());
         envelope.setUserModel(holder.getCurrentUser());
-        if(screenModel.getCk_SaveForGroup().isChecked())
-        {
-            envelope.setSaveForGroup(true);
-            envelope.setGroupName(holder.getCurrentGroup().getGroupName());
-        }
-        else
-            envelope.setSaveForGroup(false);
+        envelope.setGroup(holder.getCurrentGroup());    
         screenModel.getSavePop().setVisible(false);
         service.saveRota(envelope, new AsyncCallback<Envelope>() {
             @Override

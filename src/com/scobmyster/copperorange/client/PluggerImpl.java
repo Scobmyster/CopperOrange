@@ -1,6 +1,7 @@
 package com.scobmyster.copperorange.client;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.scobmyster.copperorange.client.process.ProcessModel;
 import com.scobmyster.copperorange.client.process.client.*;
@@ -32,6 +33,8 @@ public class PluggerImpl
         logbox.logMessage("Logging startup");
         screenModel.setLogbox(logbox);
         tableBuilder.setLogbox(logbox);
+        tableBuilder.setHandler(handler);
+        tableBuilder.setScreenModel(screenModel);
         pop_builder.setLogBox(logbox);
 
         rotaTable.setScreenModel(screenModel);
@@ -62,7 +65,6 @@ public class PluggerImpl
         buttonPanel.add(loadButton);
 
         Label username = new Label(userHolder.getCurrentUser().getUsername());
-        username.addMouseListener(new ToolTipListener("Link Me", 5000, ""));
         screenModel.setCurrentUser(username);
 
 
@@ -204,6 +206,7 @@ public class PluggerImpl
         userSetupService.setScreenModel(screenModel);
         userSetupService.setHolder(userHolder);
         userSetupService.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+        userSetupService.setHandler(handler);
 
         GroupFetchMyGroups groupFetchMyGroups = new GroupFetchMyGroups();
         groupFetchMyGroups.setScreenModel(screenModel);
@@ -214,6 +217,11 @@ public class PluggerImpl
         groupSwitch.setScreenModel(screenModel);
         groupSwitch.setHolder(userHolder);
         groupSwitch.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
+
+        UserLinkToRota userLinkToRota = new UserLinkToRota();
+        userLinkToRota.setScreenModel(screenModel);
+        userLinkToRota.setHolder(userHolder);
+        userLinkToRota.setService((OrangeServiceAsync) GWT.create(OrangeService.class));
 
         DebugButton debugButton = new DebugButton();
         //-------------------------------
@@ -250,6 +258,7 @@ public class PluggerImpl
 
         mapOfProcesses.put(screenModel.getLoginButton().getEventID(), (ProcessModel) userLogin);
         mapOfProcesses.put(screenModel.getRegisterButton().getEventID(), (ProcessModel) userRegister);
+        mapOfProcesses.put("link", (ProcessModel) userLinkToRota);
 
 
 

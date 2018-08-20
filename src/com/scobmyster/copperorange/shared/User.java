@@ -16,7 +16,8 @@ public class User implements Serializable
     private String password;
     private String ds_loc;
     private String[] myGroups = new String[]{};
-
+    private Link[] links = new Link[] {};
+    
     public String getUsername()
     {
         return username;
@@ -50,6 +51,16 @@ public class User implements Serializable
     public String[] getMyGroups() { return myGroups; }
     @XmlElement
     public void setMyGroups(String[] myGroups){ this.myGroups = myGroups; }
+    
+    public Link[] getLinks()
+    {
+ 	   return links;
+    }
+    @XmlElement
+    public void setLinks(Link[] links)
+    {
+ 	   this.links = links;
+    }
 
     public String FindGroupByName(String name)
     {
@@ -81,6 +92,13 @@ public class User implements Serializable
         List<String> copyOfMyGroups = new LinkedList<>(Arrays.asList(myGroups));
         copyOfMyGroups.add(groupToAdd);
         setMyGroups(copyOfMyGroups.toArray(new String[copyOfMyGroups.size()]));
+    }
+    
+    public void AddToLinks(Link linkToAdd)
+    {
+    	List<Link> copyOfLinks = new LinkedList<>(Arrays.asList(links));
+    	copyOfLinks.add(linkToAdd);
+    	setLinks(copyOfLinks.toArray(new Link[copyOfLinks.size()]));
     }
 
 

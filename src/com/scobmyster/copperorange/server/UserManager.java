@@ -15,174 +15,181 @@ import java.util.List;
 public class UserManager
 {
 
-    private User userModel;
-    private List<User> userbase = new ArrayList<>();
+	private User userModel;
+	private List<User> userbase = new ArrayList<>();
 
-    public Envelope loginUser(Envelope envelope)
-    {
-        userModel = envelope.getUserModel();
-        populateUserBase();
-        if(checkUserValid(userModel))
-        {
-            envelope.setUserGreenlight(true);
-            userModel = LoadUserProfile(envelope);
-            envelope.setUserModel(userModel);
-        }
-        else
-        {
-            envelope.setUserGreenlight(false);
-        }
+	public Envelope loginUser(Envelope envelope)
+	{
+		userModel = envelope.getUserModel();
+		populateUserBase();
+		if(checkUserValid(userModel))
+		{
+			envelope.setUserGreenlight(true);
+			userModel = LoadUserProfile(envelope);
+			envelope.setUserModel(userModel);
+		}
+		else
+		{
+			envelope.setUserGreenlight(false);
+		}
 
-        return envelope;
-    }
+		return envelope;
+	}
 
-    public boolean checkUserValid(User userModel)
-    {
-        boolean correctName = false;
-        boolean correctPassword = false;
-        boolean userValid = false;
+	public boolean checkUserValid(User userModel)
+	{
+		boolean correctName = false;
+		boolean correctPassword = false;
+		boolean userValid = false;
 
-        for(User user : userbase)
-        {
-            if(userModel.getUsername().equals(user.getUsername()))
-            {
-                correctName = true;
-            }
-            if(userModel.getPassword().equals(user.getPassword()))
-            {
-                correctPassword = true;
-            }
-        }
+		for(User user : userbase)
+		{
+			if(userModel.getUsername().equals(user.getUsername()))
+			{
+				correctName = true;
+			}
+			if(userModel.getPassword().equals(user.getPassword()))
+			{
+				correctPassword = true;
+			}
+		}
 
-        if(correctName && correctPassword)
-        {
-            userValid = true;
-            for(User user : userbase)
-            {
-                if(userModel.getUsername().equals(user.getUsername()))
-                {
-                    userModel.setDs_loc(user.getDs_loc());
-                }
-            }
-        }
-        return userValid;
-    }
+		if(correctName && correctPassword)
+		{
+			userValid = true;
+			for(User user : userbase)
+			{
+				if(userModel.getUsername().equals(user.getUsername()))
+				{
+					userModel.setDs_loc(user.getDs_loc());
+				}
+			}
+		}
+		return userValid;
+	}
 
-    public void populateUserBase()
-    {
-        userbase.clear();
-        File[] filesInTargetDirectory = new File("C:/gwt-2.8.1/CopperOrange/users/").listFiles();
-        for(File file : filesInTargetDirectory)
-        {
-            try
-            {
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+	public void populateUserBase()
+	{
+		userbase.clear();
+		File[] filesInTargetDirectory = new File("C:/gwt-2.8.1/CopperOrange/users/").listFiles();
+		for(File file : filesInTargetDirectory)
+		{
+			try
+			{
+				JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                User user = (User) jaxbUnmarshaller.unmarshal(file);
-                userbase.add(user);
-            } catch (JAXBException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("User base is populated");
-    }
+				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+				User user = (User) jaxbUnmarshaller.unmarshal(file);
+				userbase.add(user);
+			} catch (JAXBException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		System.out.println("User base is populated");
+	}
 
-    public void registerUser(Envelope envelope)
-    {
-        userModel = envelope.getUserModel();
-        populateUserBase();
-        if(checkUserCanRegister(userModel) == true)
-        {
-            System.out.println("Registering the user");
-            String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + userModel.getUsername() + ".xml");
-            userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + userModel.getUsername() + "/");
-            try
-            {
-                File file = new File(regPath);
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
-                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-                System.out.println("Saving to: " + file.getAbsolutePath());
-                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	public void registerUser(Envelope envelope)
+	{
+		userModel = envelope.getUserModel();
+		populateUserBase();
+		if(checkUserCanRegister(userModel) == true)
+		{
+			System.out.println("Registering the user");
+			String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + userModel.getUsername() + ".xml");
+			userModel.setDs_loc("C:/gwt-2.8.1/CopperOrange/ds/" + userModel.getUsername() + "/");
+			try
+			{
+				File file = new File(regPath);
+				JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+				Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+				System.out.println("Saving to: " + file.getAbsolutePath());
+				jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-                jaxbMarshaller.marshal(envelope.getUserModel(), file);
-                jaxbMarshaller.marshal(envelope.getUserModel(), System.out);
-            }
-            catch (JAXBException e)
-            {
-                e.printStackTrace();
-            }
-            envelope.setUserGreenlight(true);
-        }
-        else
-        {
-            System.out.println("Username already taken");
-            envelope.setUserGreenlight(false);
-        }
-    }
+				jaxbMarshaller.marshal(envelope.getUserModel(), file);
+				jaxbMarshaller.marshal(envelope.getUserModel(), System.out);
+			}
+			catch (JAXBException e)
+			{
+				e.printStackTrace();
+			}
+			envelope.setUserGreenlight(true);
+		}
+		else
+		{
+			System.out.println("Username already taken");
+			envelope.setUserGreenlight(false);
+		}
+	}
 
-    public void SaveUserChanges(User user)
-    {
-        System.out.println("Saving changes to user profile");
-        String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + user.getUsername() + ".xml");
-        try
-        {
-            File file = new File(regPath);
-            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-            System.out.println("Saving to: " + file.getAbsolutePath());
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	public void SaveUserChanges(User user)
+	{
+		System.out.println("Saving changes to user profile");
+		String regPath = ("C:/gwt-2.8.1/CopperOrange/users/" + user.getUsername() + ".xml");
+		try
+		{
+			File file = new File(regPath);
+			JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+			System.out.println("Saving to: " + file.getAbsolutePath());
+			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            jaxbMarshaller.marshal(user, file);
-            jaxbMarshaller.marshal(user, System.out);
-        }
-        catch (JAXBException e)
-        {
-            e.printStackTrace();
-        }
-    }
+			jaxbMarshaller.marshal(user, file);
+			jaxbMarshaller.marshal(user, System.out);
+		}
+		catch (JAXBException e)
+		{
+			e.printStackTrace();
+		}
+	}
 
-    public boolean checkUserCanRegister(User userModel)
-    {
-        boolean registerValid = false;
-        for(User user : userbase)
-        {
-            if(userModel.getUsername().equals(user.getUsername()))
-            {
-                System.out.println("Register Invalid: " + userModel.getUsername());
-                registerValid = false;
-            }
-            else
-            {
-                System.out.println("Register Valid: " + userModel.getUsername());
-                registerValid = true;
-            }
-        }
-        return registerValid;
-    }
+	public boolean checkUserCanRegister(User userModel)
+	{
+		boolean registerValid = false;
+		if(userbase.isEmpty())
+		{
+			registerValid = true;
+		}
+		else
+		{
+			for(User user : userbase)
+			{
+				if(userModel.getUsername().equals(user.getUsername()))
+				{
+					System.out.println("Register Invalid: " + userModel.getUsername() + " equal to: " + user.getUsername());
+					registerValid = false;
+				}
+				else
+				{
+					System.out.println("Register Valid: " + userModel.getUsername() + " is not equal to: " + user.getUsername());
+					registerValid = true;
+				}
+			}
+		}
+		return registerValid;
+	}
 
-    public User LoadUserProfile(Envelope envelope)
-    {
-        User user = new User();
-        String username = envelope.getUserModel().getUsername();
-        System.out.println("Loading up profile: " + username);
-        try
-        {
-            File file = new File("C:/gwt-2.8.1/CopperOrange/users/" + username + ".xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+	public User LoadUserProfile(Envelope envelope)
+	{
+		User user = new User();
+		String username = envelope.getUserModel().getUsername();
+		System.out.println("Loading up profile: " + username);
+		try
+		{
+			File file = new File("C:/gwt-2.8.1/CopperOrange/users/" + username + ".xml");
+			JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            user = (User) jaxbUnmarshaller.unmarshal(file);
-        }
-        catch(JAXBException e)
-        {
-            e.printStackTrace();
-            e.getMessage();
-        }
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+			user = (User) jaxbUnmarshaller.unmarshal(file);
+		}
+		catch(JAXBException e)
+		{
+			e.printStackTrace();
+			e.getMessage();
+		}
 
-        return user;
-    }
+		return user;
+	}
 }
 
 

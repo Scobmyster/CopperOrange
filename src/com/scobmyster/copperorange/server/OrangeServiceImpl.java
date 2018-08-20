@@ -15,6 +15,7 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     private static final long serialVersionUID = 1L;
     UserManager userManager = new UserManager();
     GroupManager groupManager = new GroupManager();
+    Linker linker = new Linker();
 
     public static void main(String[] args)
     {
@@ -107,6 +108,14 @@ public class OrangeServiceImpl extends RemoteServiceServlet implements OrangeSer
     public Envelope groupSwitch(Envelope envelope) throws IllegalArgumentException
     {
         envelope.setGroup(groupManager.GetGroupFromName(envelope.getGroupName()));
+        return envelope;
+    }
+
+    @Override
+    public Envelope userLinkToRota(Envelope envelope) throws IllegalArgumentException
+    {
+    	linker.setUserManager(userManager);
+        linker.LinkUserAndRota(envelope);
         return envelope;
     }
 }
